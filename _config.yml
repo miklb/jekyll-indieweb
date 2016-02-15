@@ -17,5 +17,13 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 
+# Can be over ridden with author: in Front Matter
+author: Primary Author Name
+
+# Expecting a full url, not relative to site.url
+author_img:
+
 # Build settings
 markdown: kramdown
+gems: [github-pages, jekyll-paginate, jekyll-seo-tag, jekyll-gist]
+paginate: 5

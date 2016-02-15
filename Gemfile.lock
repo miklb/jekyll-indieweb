@@ -125,7 +125,9 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll
+  jekyll-gist
   jekyll-paginate
+  jekyll-seo-tag
 
 BUNDLED WITH
    1.11.2
