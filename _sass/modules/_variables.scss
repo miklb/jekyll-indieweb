@@ -1,0 +1,21 @@
+//Base colors
+$text-color: #333;
+$quiet-color: #ccc;
+$loud-color: #000;
+$heading-color: RGBA(11, 26, 38, 1);
+//Link colors
+$link-color: #d54aaf;
+$link-hover-color: saturate(#d54aaf, 20%);
+$link-visited-color: purple;
+// Font weights
+$light: 100;
+$regular: 400;
+$bold: 700;
+//Font families
+$sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !default;
+$serif: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif !default;
+$monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// Padding
+$padding-large: 20%;
+$padding-small: 5%;
+$padding-x-small: 3%;

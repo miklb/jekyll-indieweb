@@ -1,16 +1,28 @@
 ---
 layout: default
 ---
-<article role="article" class="post h-entry">
-  <header class="entry_header">
-    <h1 class="post-title p-name">{{ page.title }}</h1>
+<article class="post h-entry" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+  <header class="entry-header">
+	  <h1 class="post-title p-name" itemprop="headline">
+		  <a class="u-url" rel="bookmark" href="{{ site.baseurl }}{{ post.url }}">
+			  {{ post.title }}
+		  </a>
+	  </h1>
   </header>
-  <div class="e-content">
+  <div class="e-content" itemprop="text">
       {{ content }}
   </div>
   <footer class="entry_footer">
+	  <p class="entry-meta">
     {% if site.authorimg %}<img src="{{ site.author_img }}" alt="{{ site.author }}" class="auth-img u-photo">{% endif %}
-  <p><a href="{{ post.url | prepend: site.baseurl }}">{{ page.title }} </a> was authored by {% include author.html %} on <time datetime="{{ page.date | date_to_xmlschema }}" class="dt-time post-date">{{ page.date | date_to_string }}</time>. This entry has been tagged with the keywords: {{ post.tags }}</p>.
+	<span class="entry-author" itemprop="author" itemscope itemptype="http://schema.org/Person">
+		<a href="{{ site.baseurl }}" class="entry-author-link" itemprop="url" rel="author">
+			<span class="entry-author-name" itemprop="name">{{ post.author }}</span>
+		</a>
+
+  <a href="{{ post.url | prepend: site.baseurl }}">{{ page.title }} </a> was authored by {% include author.html %} on <time datetime="{{ page.date | date_to_xmlschema }}" class="dt-time post-date">{{ page.date | date_to_string }}</time>.
+   This entry has been tagged with the keywords: {{ post.tags }}
+	</p>.
 </footer>
 
 </article>

@@ -2,3 +2,8 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
+@import "modules/variables";
+@import "modules/mixins";
+@import "partials/reset";
+@import "partials/base";
+@import "partials/layout";

@@ -1,20 +1,50 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <body>
+	<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-    {% include header.html %}
+	<link rel="stylesheet" href="{{ " /css/main.css " | prepend: site.baseurl }}">
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml " | prepend: site.baseurl | prepend: site.url }}"> {% seo %}
+</head>
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+<body class="h-feed" itemscope itemtype="http://schema.org/WebPage">
 
-    {% include footer.html %}
+	<header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader"
+>
+		<a class="site-title" itemprop="headline" href="{{ site.baseurl }}/">{{ site.title }}</a>
+		<nav class="site-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			<ul>
+				{% for my_page in site.pages %}
+          		{% if my_page.title %}
+          		<li itemprop="url"><a itemprop="name" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
+          		{% endif %}
+        		{% endfor %}
+			</ul>
+		</nav>
+	</header>
+	{% if page.url == '/' %}
+	{% include hcard.html %}
+	{% endif %}
+	<div id="wrapper">
+		<main role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+			<div class="content">
+				{{ content }}
+			</div>
+		</main>
 
-  </body>
+	</div>
+	<footer class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter"
+>
+
+
+	</footer>
+</body>
 
 </html>

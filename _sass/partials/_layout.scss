@@ -1,0 +1,63 @@
+.site-header {
+  @extend %padding-small;
+  align-items: center;
+  display: flex;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+
+    .site-nav {
+      flex-basis: 100%;
+      order: 2;
+      text-align: center;
+
+      a {
+        @include font-size(24px);
+        color: $heading-color;
+        letter-spacing: 2px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.site-nav {
+  flex: 1;
+  text-align: right;
+
+  > ul {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    @include font-size(18px);
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+.content {
+  @extend %padding-regular;
+  display: inline-block;
+  width: 100%;
+}
+
+.h-card {
+  @extend %padding-regular;
+  background-color: $heading-color;
+  background-size: cover;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.2em;
+  text-align: center;
+  width: 100%;
+}
+
+.entry-header {
+  margin-bottom: 1em;
+}

@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: $text-color;
+  font-family: $sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+// Links
+
+.site-title {
+  @include font-size(30px);
+  color: $heading-color;
+  text-decoration: none;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $text-color;
+  font-weight: $bold;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  @include font-size(50px);
+}
+
+h2 {
+  @include font-size(36px);
+  margin-top: 1rem;
+}
+
+h3 {
+  @include font-size(28px);
+  margin-top: 1.5rem;
+}
+
+h4,
+h5,
+h6 {
+  @include font-size(24px);
+  margin-top: 1rem;
+}
+
+.post {
+  p {
+    @include font-size(20px);
+  }
+}
+
+.u-url {
+  color: $text-color;
+  text-decoration: none;
+}
+
+.post-date {
+  @include font-size(20px);
+  color: $quiet-color;
+  text-transform: uppercase;
+}
+
+.h-card {
+  h2 {
+    color: #fff;
+    margin-left: em;
+  }
+}
+
+.u-photo {
+  border-radius: 50%;
+  height: 160px;
+  overflow: hidden;
+  width: 160px;
+  border: $quiet-color 3px solid;
+}
+
+.soc {
+  display: block;
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  padding: 1.5rem;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    margin: 1em;
+}
+  a, svg {
+      display: block;
+  }
+  a {
+        position: relative; // IE8
+        height: 4rem;
+        width: 4rem;
+} }
+
+svg {
+    height: 100%;
+    width: 100%;
+}
+
+
+.icon {
+  color: $quiet-color; // IE8
+  fill: $quiet-color;
+
+  &:hover {
+    @extend %social-icon-hover;
+    background: $quiet-color;
+  } }
+
+
+// Responsive media
+iframe,
+img,
+embed,
+object,
+video {
+  max-width: 100%;
+}
