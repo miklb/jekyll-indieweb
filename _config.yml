@@ -35,5 +35,10 @@ author_img: https://avatars3.githubusercontent.com/u/3083652
 
 # Build settings
 markdown: kramdown
-gems: [github-pages, jekyll-paginate, jekyll-seo-tag, jekyll-gist]
+gems:
+  - github-pages
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-gist
+
 paginate: 5
