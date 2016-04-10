@@ -51,7 +51,18 @@
   }
 }
 
-.h-card {
+.post-title {
+  a {
+    color: $heading-color;
+
+    &:hover {
+      color: $link-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.banner {
   @extend %padding-regular;
   background-color: $heading-color;
   background-size: cover;
@@ -60,6 +71,14 @@
   font-size: 1.2em;
   text-align: center;
   width: 100%;
+
+  .u-photo {
+    border: $quiet-color 3px solid;
+    border-radius: 50%;
+    height: 10rem;
+    overflow: hidden;
+    width: 10rem;
+  }
 }
 
 
@@ -103,4 +122,14 @@
   text-decoration: none;
   background-color: $text-color;
   color: $quiet-color;
+}
+
+.entry-meta {
+  .u-photo {
+    border: $quiet-color 3px solid;
+    border-radius: 50%;
+    height: 5rem;
+    overflow: hidden;
+    width: 5rem;
+    }
 }

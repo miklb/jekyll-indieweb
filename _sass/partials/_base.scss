@@ -52,8 +52,14 @@ blockquote {
 }
 
 .post {
-  ol,
+  ol {
+    list-style-type: decimal;
+    margin: 1rem .5rem;
+
+  }
+
   ul {
+    list-style-type: square;
     margin: 1rem .5rem;
     }
 
@@ -109,6 +115,19 @@ pre {
   }
 }
 
+table {
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 1px solid $quiet-color;
+}
+
+th, td {
+  text-align: left;
+  padding: 4px;
+}
+
 // Headings
 h1,
 h2,
@@ -144,16 +163,7 @@ h6 {
   margin-top: 1rem;
 }
 
-.post-title {
-  a {
-    color: $heading-color;
 
-    &:hover {
-      color: $link-color;
-      text-decoration: none;
-    }
-  }
-}
 
 .u-url {
   color: $text-color;
@@ -171,14 +181,6 @@ h6 {
     color: $white;
     margin-left: em;
   }
-}
-
-.u-photo {
-  border: $quiet-color 3px solid;
-  border-radius: 50%;
-  height: 160px;
-  overflow: hidden;
-  width: 160px;
 }
 
 .soc {
