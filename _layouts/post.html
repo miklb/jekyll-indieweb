@@ -24,5 +24,8 @@ layout: default
    This entry has been tagged with the keywords: {{ post.tags }}
 	</p>.
 </footer>
-
 </article>
+
+{% if site.webmentions %}
+{% include webmentions.html %}
+{% endif %}
