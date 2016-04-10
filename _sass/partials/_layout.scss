@@ -45,19 +45,62 @@
   @extend %padding-regular;
   display: inline-block;
   width: 100%;
+
+  article {
+    margin-bottom: 5rem;
+  }
 }
 
 .h-card {
   @extend %padding-regular;
   background-color: $heading-color;
   background-size: cover;
-  color: #fff;
+  color: $white;
   display: inline-block;
   font-size: 1.2em;
   text-align: center;
   width: 100%;
 }
 
+
 .entry-header {
   margin-bottom: 1em;
+}
+
+// Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
+// there are no more previous or next posts to show.
+
+.pagination {
+  border-top: 1px solid $quiet-color;
+  color: $quiet-color;
+  font-weight: bold;
+  margin-top: 40px;
+  overflow: hidden; // clearfix
+  text-align: center;
+
+}
+// Pagination should float when space is plentiful
+@media (min-width: 990px) {
+  .pagination {
+    margin-bottom: 60px;
+    border: 1px solid $quiet-color;
+  }
+}
+
+.pagination a,
+.pagination span {
+  float: left;
+  padding: 20px;
+  width: 50%;
+}
+
+.pagination a:first-child,
+.pagination span:first-child {
+  border-right: 1px solid $quiet-color;
+}
+
+.pagination a:hover {
+  text-decoration: none;
+  background-color: $text-color;
+  color: $quiet-color;
 }
