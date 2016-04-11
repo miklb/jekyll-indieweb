@@ -13,20 +13,25 @@ layout: default
       {{ content }}
   </div>
   <footer class="entry-footer">
-	  <p class="entry-meta">
-    {% if site.author_img %}<img src="{{ site.author_img }}" alt="{{ site.author }}" class="auth-img u-photo">{% endif %}
-	<span class="entry-author" itemprop="author" itemscope itemptype="http://schema.org/Person">
-		<a href="{{ site.baseurl }}" class="entry-author-link" itemprop="url" rel="author">
-			<span class="entry-author-name" itemprop="name">{{ post.author }}</span>
-		</a>
-
-  <a href="{{ post.url | prepend: site.baseurl }}">{{ page.title }} </a> was authored by {% include author.html %} on <time datetime="{{ page.date | date_to_xmlschema }}" class="dt-time post-date">{{ page.date | date_to_string }}</time>.
-   This entry has been tagged with the keywords: {{ page.tags }}
-	</p>.
+	  <div class="entry-meta">
+    {% if site.author_img %}
+      <div class="auth-img">
+        <img src="{{ site.author_img }}" alt="{{ site.author }}" class="u-photo">
+      </div>
+    {% endif %}
+      <div class="meta-wrap">
+        <span class="entry-author" itemprop="author" itemscope itemptype="http://schema.org/Person">
+		        <a href="{{ site.baseurl }}" class="entry-author-link" itemprop="url" rel="author">
+			           <span class="entry-author-name" itemprop="name">{{ post.author }}</span>
+		        </a>
+        </span>
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ page.title }} </a>was authored by {% include author.html %} on <time datetime="{{ page.date | date_to_xmlschema }}" class="dt-time post-date">{{ page.date | date_to_string }}</time>.
+   This entry has been tagged with the keywords: {% for tags in page.tags %}<span class="tag">{{ tags }} </span>{% endfor %}
+    </div>
+  </div>
 </footer>
 </article>
 
 {% if site.webmentions %}
 {% include webmentions.html %}
 {% endif %}
-<script id="webmention-hosted" src="https://webmention.herokuapp.com/api/embed?example"></script>

@@ -97,6 +97,14 @@
   overflow: hidden; // clearfix
   text-align: center;
 
+  a {
+    &:hover {
+      background-color: $text-color;
+      color: $quiet-color;
+      text-decoration: none;
+    }
+  }
+
 }
 // Pagination should float when space is plentiful
 @media (min-width: 990px) {
@@ -118,18 +126,67 @@
   border-right: 1px solid $quiet-color;
 }
 
-.pagination a:hover {
-  text-decoration: none;
-  background-color: $text-color;
-  color: $quiet-color;
+.entry-footer {
+  background: rgba($quiet-color, .1);
 }
 
 .entry-meta {
-  .u-photo {
-    border: $quiet-color 3px solid;
-    border-radius: 50%;
-    height: 5rem;
-    overflow: hidden;
-    width: 5rem;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  .auth-img {
+    flex: 0 auto;
+    padding: 1rem;
+
+    .u-photo {
+      border: $quiet-color 3px solid;
+      border-radius: 50%;
+      height: 5rem;
+      overflow: hidden;
+      }
+  }
+
+  .meta-wrap {
+    @include font-size(18px);
+
+    flex: 1;
+    padding: 1rem;
     }
+
+  .post-date {
+    text-transform: none;
+    }
+}
+
+.webmention-mention {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  width: 100%;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+
+  .webmention-author {
+    flex: 0 auto;
+    height: 7rem;
+
+    a {
+      text-align: center;
+     }
+
+    img {
+      display: block;
+      height: 4rem;
+      overflow: hidden;
+      padding-left: 25%;
+    }
+}
+
+  .webmention-summary {
+    flex: 1;
+    padding: 1rem;
+}
 }
