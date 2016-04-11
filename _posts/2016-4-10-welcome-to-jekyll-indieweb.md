@@ -16,3 +16,5 @@ Also configurable is whether or not you would like to receive [webmentions](http
 Currently there isn't a simple method for sending webmentions with static blogs, especially hosted on GitHub, but as soon as a solution is in place, I will update this project. If you are adventurous, feel free to ping me in the  IRC channel and I can share my method.
 
 Finally, I attempted to make the *design* of this project as un-opinionated as I could, but maintain an aesthetic that someone just starting out would comfortable with and still be able to easily customize.
+
+Visit the [GitHub repo to get started](https://github.com/miklb/jekyll-indieweb).
