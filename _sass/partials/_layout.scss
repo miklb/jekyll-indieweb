@@ -190,3 +190,10 @@
     padding: 1rem;
 }
 }
+
+.site-footer {
+  @extend %padding-regular;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
