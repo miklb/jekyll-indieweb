@@ -14,16 +14,15 @@
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml " | prepend: site.github.url | prepend: site.url }}"> {% seo %}
 </head>
 
-<body class="h-feed" itemscope itemtype="http://schema.org/WebPage">
+<body class="h-feed">
 
-	<header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader"
->
-		<a class="site-title" itemprop="headline" href="{{ site.github.url }}/">{{ site.title }}</a>
-		<nav class="site-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+	<header class="site-header" role="banner">
+		<a class="site-title" href="{{ site.github.url }}/">{{ site.title }}</a>
+		<nav class="site-nav" role="navigation">
 			<ul>
 				{% for my_page in site.pages %}
           		{% if my_page.title %}
-          		<li itemprop="url"><a itemprop="name" href="{{ my_page.url | prepend: site.github.url }}">{{ my_page.title }}</a></li>
+          		<li itemprop="url"><a href="{{ my_page.url | prepend: site.github.url }}">{{ my_page.title }}</a></li>
           		{% endif %}
         		{% endfor %}
 			</ul>
@@ -33,15 +32,14 @@
 	{% include hcard.html %}
 	{% endif %}
 	<div id="wrapper">
-		<main role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+		<main role="main">
 			<div class="content">
 				{{ content }}
 			</div>
 		</main>
 
 	</div>
-	<footer class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter"
->
+	<footer class="site-footer" role="contentinfo">
 <p>
 	Built with <a href="https://github.com/miklb/jekyll-indieweb">Jekyll</a> on <a href="https://indiewebcamp.com)
 ">IndieWeb principles</a>

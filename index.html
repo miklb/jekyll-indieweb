@@ -10,16 +10,16 @@ layout: default
 	        		{{ post.title }}
 	      		</a>
 	  		</h1>
-			<time class="dt-time post-date" datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date_to_string }}</time>
+			<time class="dt-time post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
 		</header>
-		<div class="e-content" itemprop="text">
+		<div class="e-content">
 		{{ post.content }}
 		</div>
 	</article>
     {% endfor %}
 
 
-    <div class="pagination" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+    <div class="pagination" role="navigation">
       {% if paginator.next_page %}
       <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.github.url }}">Older</a> {% else %}
       <span class="pagination-item older">Older</span> {% endif %} {% if paginator.previous_page %}
