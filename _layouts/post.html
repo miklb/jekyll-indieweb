@@ -4,7 +4,7 @@ layout: default
 <article class="post h-entry" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
   <header class="entry-header">
 	  <h1 class="post-title p-name" itemprop="headline">
-		  <a class="u-url" rel="bookmark" href="{{ site.baseurl }}{{ page.url }}">
+		  <a class="u-url" rel="bookmark" href="{{ site.github.url }}{{ page.url }}">
 			  {{ page.title }}
 		  </a>
 	  </h1>
@@ -21,11 +21,11 @@ layout: default
     {% endif %}
       <div class="meta-wrap">
         <span class="entry-author" itemprop="author" itemscope itemptype="http://schema.org/Person">
-		        <a href="{{ site.baseurl }}" class="entry-author-link" itemprop="url" rel="author">
+		        <a href="{{ site.github.url }}" class="entry-author-link" itemprop="url" rel="author">
 			           <span class="entry-author-name" itemprop="name">{{ post.author }}</span>
 		        </a>
         </span>
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ page.title }} </a>was authored by {% include author.html %} on <time datetime="{{ page.date | date_to_xmlschema }}" class="dt-time post-date">{{ page.date | date_to_string }}</time>.
+        <a href="{{ post.url | prepend: site.github.url }}">{{ page.title }} </a>was authored by {% include author.html %} on <time datetime="{{ page.date | date_to_xmlschema }}" class="dt-time post-date">{{ page.date | date_to_string }}</time>.
    This entry has been tagged with the keywords: {% for tags in page.tags %}<span class="tag">{{ tags }} </span>{% endfor %}
     </div>
   </div>

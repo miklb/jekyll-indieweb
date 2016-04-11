@@ -10,20 +10,20 @@
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
 	<link rel="stylesheet" href= "{{ site.github.url }}/css/main.css">
-	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml " | prepend: site.baseurl | prepend: site.url }}"> {% seo %}
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.github.url | prepend: site.url }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml " | prepend: site.github.url | prepend: site.url }}"> {% seo %}
 </head>
 
 <body class="h-feed" itemscope itemtype="http://schema.org/WebPage">
 
 	<header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader"
 >
-		<a class="site-title" itemprop="headline" href="{{ site.baseurl }}/">{{ site.title }}</a>
+		<a class="site-title" itemprop="headline" href="{{ site.github.url }}/">{{ site.title }}</a>
 		<nav class="site-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 			<ul>
 				{% for my_page in site.pages %}
           		{% if my_page.title %}
-          		<li itemprop="url"><a itemprop="name" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
+          		<li itemprop="url"><a itemprop="name" href="{{ my_page.url | prepend: site.github.url }}">{{ my_page.title }}</a></li>
           		{% endif %}
         		{% endfor %}
 			</ul>
