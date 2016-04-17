@@ -20,11 +20,14 @@
 		<a class="site-title" href="{{ site.github.url }}/">{{ site.title }}</a>
 		<nav class="site-nav" role="navigation">
 			<ul>
-				{% for my_page in site.pages %}
-          		{% if my_page.title %}
-          		<li itemprop="url"><a href="{{ my_page.url | prepend: site.github.url }}">{{ my_page.title }}</a></li>
-          		{% endif %}
-        		{% endfor %}
+				{% assign pages_list = site.pages %}
+      	 {% for node in pages_list %}
+         {% if node.title != null %}
+         {% if node.layout == "page" %}
+				 <li itemprop="url"><a  class="{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a></li>
+				 {% endif %}
+	 {% endif %}
+ {% endfor %}
 			</ul>
 		</nav>
 	</header>
