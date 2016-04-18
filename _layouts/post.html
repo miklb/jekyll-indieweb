@@ -14,19 +14,19 @@ layout: default
   </div>
   <footer class="entry-footer">
 	  <div class="entry-meta">
-    {% if site.author_img %}
-      <div class="auth-img">
-        <img src="{{ site.author_img }}" alt="{{ site.author }}" class="u-photo">
-      </div>
-    {% endif %}
-      <div class="meta-wrap">
-        <span class="entry-author">
+      <div class="h-card">
 		        <a href="{{ site.github.url }}" class="entry-author-link" rel="author">
-			           <span class="entry-author-name">{{ post.author }}</span>
-		        </a>
-        </span>
-        <a href="{{ post.url | prepend: site.github.url }}">{{ page.title }} </a>was authored by {% include author.html %} on <time datetime="{{ page.date | date_to_xmlschema }}" class="dt-time post-date">{{ page.date | date_to_string }}</time>.
-   This entry has been tagged with the keywords: {% for tags in page.tags %}<span class="tag">{{ tags }} </span>{% endfor %}
+                  {% if site.author_img %}
+                  <div class="auth-img">
+                    <img src="{{ site.author_img }}" alt="{{ site.author }}" class="u-photo">
+                  </div>
+                  {% endif %}
+                  {% include author.html %}
+            </a>
+      </div>
+      <div class="meta-wrap">
+        <p><a href="{{ post.url | prepend: site.github.url }}">{{ page.title }} </a> posted on <time datetime="{{ page.date | date_to_xmlschema }}" class="dt-time post-date">{{ page.date | date_to_string }}</time>.</p>
+        <p>This entry has been tagged with the keywords: {% for tags in page.tags %}<span class="tag">{{ tags }} </span>{% endfor %}</p>
     </div>
   </div>
 </footer>
