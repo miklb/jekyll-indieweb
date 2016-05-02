@@ -13,7 +13,7 @@ layout: default
       {{ content }}
   </div>
   <footer class="entry-footer">
-	  <div class="entry-meta">
+
       <div class="h-card p-author">
 		        <a href="{{ site.github.url }}" class="entry-author-link" rel="author">
                   {% if site.author_img %}
@@ -28,7 +28,7 @@ layout: default
         <p><a href="{{ post.url | prepend: site.github.url }}">{{ page.title }} </a> posted on <time datetime="{{ page.date | date_to_xmlschema }}" class="dt-time post-date">{{ page.date | date_to_string }}</time>.</p>
         <p>This entry has been tagged with the keywords: {% for tags in page.tags %}<span class="tag">{{ tags }} </span>{% endfor %}</p>
     </div>
-  </div>
+  
 </footer>
 </article>
 
