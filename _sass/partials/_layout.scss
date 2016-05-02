@@ -128,9 +128,6 @@
 
 .entry-footer {
   background: rgba($quiet-color, .1);
-}
-
-.entry-meta {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -142,6 +139,7 @@
     .u-photo {
       border: $quiet-color 3px solid;
       border-radius: 50%;
+      display: block;
       height: 5rem;
       margin: auto;
       }
@@ -157,7 +155,7 @@
   .post-date {
     text-transform: none;
     }
-}
+  }
 
 .webmention-mention {
   display: flex;

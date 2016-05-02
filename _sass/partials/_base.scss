@@ -30,6 +30,23 @@ a {
   }
 }
 
+// Kramdown Footnotes
+
+.footnote {
+  font-size: smaller;
+  vertical-align: super;
+}
+
+.footnotes {
+
+  ol {
+
+    li {
+      margin-left: 1rem;
+    }
+  }
+}
+
 // Quotes
 blockquote {
   border-left: 5px solid $quiet-color;
@@ -123,9 +140,10 @@ tr {
   border-bottom: 1px solid $quiet-color;
 }
 
-th, td {
-  text-align: left;
+th,
+td {
   padding: 4px;
+  text-align: left;
 }
 
 // Headings
@@ -205,7 +223,8 @@ h6 {
     height: 4rem;
     position: relative; // IE8
     width: 4rem;
-} }
+}
+}
 
 svg {
   height: 100%;
@@ -220,7 +239,8 @@ svg {
   &:hover {
     @extend %social-icon-hover;
     background: $quiet-color;
-  } }
+  }
+}
 
 
 // Responsive media
