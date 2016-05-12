@@ -32,6 +32,7 @@
     margin: 0;
     padding: 0;
   }
+
   a {
     @include font-size(18px);
     display: inline-block;
@@ -81,7 +82,6 @@
   }
 }
 
-
 .entry-header {
   margin-bottom: 1em;
 }
@@ -109,8 +109,8 @@
 // Pagination should float when space is plentiful
 @media (min-width: 990px) {
   .pagination {
-    margin-bottom: 60px;
     border: 1px solid $quiet-color;
+    margin-bottom: 60px;
   }
 }
 
@@ -127,10 +127,15 @@
 }
 
 .entry-footer {
+  align-items: center;
   background: rgba($quiet-color, .1);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
 
   .h-card {
     flex: 0 auto;
