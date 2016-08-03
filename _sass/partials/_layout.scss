@@ -128,7 +128,7 @@
 
 .entry-footer {
   align-items: center;
-  background: rgba($quiet-color, .1);
+  background: $quiet-color-light;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -196,6 +196,6 @@
 .site-footer {
   @extend %padding-regular;
   display: inline-block;
-  width: 100%;
   text-align: center;
+  width: 100%;
 }

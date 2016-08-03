@@ -1,0 +1,83 @@
+{% assign post = include.post %}
+
+  {% if post.mf-video != null %}
+    <div class="media">
+      {% for video in post.mf-video %}
+        <video class="u-video" src="{{video}}" controls loop>
+          <div lang="en">Looks like you can't see this video. <a href="{{video}}" download>Download it</a> instead.</div>
+        </video>
+      {% endfor %}
+    </div>
+  {% elsif post.mf-photo != null %}
+    <div class="media">
+      {% for photo in post.mf-photo %}
+        <img class="u-photo" src="{{photo}}" alt="" />
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if post.title != '' %}
+    <header>
+      <h2 class="p-name">
+        {% if post.mf-bookmark %}
+          <a class="u-bookmark-of" href="{{post.mf-bookmark | first}}">{{post.title}}</a>
+        {% elsif post.mf-bookmark-of %}
+          <a class="u-bookmark-of" href="{{post.mf-bookmark-of | first}}">{{post.title}}</a>
+        {% elsif post.mf-repost-of %}
+          <a class="u-repost-of" href="{{post.mf-repost-of | first}}">{{post.title}}</a>
+        {% endif %}
+      </h2>
+    </header>
+  {% endif %}
+{% if post.mf-in-reply-to != null %}
+      <h3>In reply to:</h3>
+    <ul>
+      {% for reply in post.mf-in-reply-to %}
+        <li><a class="u-in-reply-to" rel="in-reply-to" href="{{reply}}">{{reply}}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <div class="e-content">
+    {% if post.content %}
+      {{ post.content }}
+    {% else %}
+      {{ content }}
+    {% endif %}
+  </div>
+
+  {% if post.mf-syndication != null %}
+    <div class="elsewhere linklist">
+        <h3>Also posted on:</h3>
+      <ul>
+        {% for elsewhere in post.mf-syndication %}
+          <li><a href="{{ elsewhere }}" class="u-syndication" {% if standalone == true %}rel="syndication"{% endif %}>
+            {{ elsewhere | remove_first:'http://'  | remove_first:'https://' | remove_first:'www.' | split:'.' | first | capitalize }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {% if post.persontags != null %}
+    <div class="persons linklist">
+        <h3>Mentioned:</h3>
+      <ul>
+        {% for elsewhere in post.persontags %}
+          <li><a href="{{ elsewhere }}" class="u-category h-card">
+            {{ elsewhere | remove_first:'http://'  | remove_first:'https://' | remove_first:'www.' | remove_first:'.com' | split:'/' | first }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {% if post.submitto != null %}
+    <div class="submitted-to linklist">
+        <h3>Submitted to:</h3>
+      <ul>
+        {% for elsewhere in post.submitto %}
+          <li><a href="{{ elsewhere }}" class="u-category">
+            {{ elsewhere | remove_first:'http://'  | remove_first:'https://' | remove_first:'www.' | remove_first:'.com' | split:'/' | first }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}

@@ -3,15 +3,27 @@ layout: default
 ---
 <article class="post h-entry">
   <header class="entry-header">
-	  <h1 class="post-title p-name">
-		  <a class="u-url" rel="bookmark" href="{{ site.github.url }}{{ page.url }}">
-			  {{ page.title }}
-		  </a>
-	  </h1>
+	  {% if post.title != '' %}
+  	<h1 class="post-title p-name">
+  		{% if post.mf-bookmark %}
+  			<a class="u-bookmark-of" href="{{page.mf-bookmark | first}}">{{post.title}}</a>
+  		{% elsif post.mf-bookmark-of %}
+  			<a class="u-bookmark-of" href="{{page.mf-bookmark-of | first}}">{{post.title}}</a>
+  		{% elsif post.mf-repost-of %}
+  			<a class="u-repost-of" href="{{page.mf-repost-of | first}}">{{post.title}}</a>
+  		{% else %}
+  		<a class="u-url" href="{{ site.github.url }}{{ page.url }}">
+  			{{ page.title }}
+  		</a>
+  		{% endif %}
+  	</h1>
+  {% endif %}
   </header>
-  <div class="e-content">
-      {{ content }}
-  </div>
+  {% if page.mf-like-of != null %}
+  {% include post-like.html post=page %}
+{% else %}
+  {% include post-content.html post=page %}
+  {% endif %}
   <footer class="entry-footer">
 
       <div class="h-card p-author">
@@ -28,7 +40,7 @@ layout: default
         <p><a href="{{ post.url | prepend: site.github.url }}">{{ page.title }} </a> posted on <time datetime="{{ page.date | date_to_xmlschema }}" class="dt-time post-date">{{ page.date | date_to_string }}</time>.</p>
         <p>This entry has been tagged with the keywords: {% for tags in page.tags %}<span class="tag">{{ tags }} </span>{% endfor %}</p>
     </div>
-  
+
 </footer>
 </article>
 

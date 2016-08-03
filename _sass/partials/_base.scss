@@ -58,11 +58,11 @@ blockquote {
     margin-bottom: 0;
     text-indent: -.4em;
 
-    &:before {
+    &::before {
       content: '\201C';
     }
 
-    &:after {
+    &::after {
       content: '\201D';
     }
   }

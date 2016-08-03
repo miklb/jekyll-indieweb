@@ -2,27 +2,17 @@
 layout: default
 ---
 
-    {% for post in paginator.posts %}
-    <article role="article" class="post h-entry">
-		<header class="entry-header">
-			<h1 class="post-title p-name">
-	      		<a class="u-url" href="{{ site.github.url }}{{ post.url }}">
-	        		{{ post.title }}
-	      		</a>
-	  		</h1>
-			<time class="dt-time post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
-		</header>
-		<div class="e-content">
-		{{ post.content }}
-		</div>
-	</article>
-    {% endfor %}
+<div class="posts">
+  {% for post in paginator.posts %}
+  {% include post.html post=post %}
+  {% endfor %}
+</div>
 
 
-    <div class="pagination" role="navigation">
-      {% if paginator.next_page %}
-      <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.github.url }}">Older</a> {% else %}
-      <span class="pagination-item older">Older</span> {% endif %} {% if paginator.previous_page %}
-      <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.github.url }}">Newer</a> {% else %}
-      <span class="pagination-item newer">Newer</span> {% endif %}
-    </div>
+<div class="pagination" role="navigation">
+  {% if paginator.next_page %}
+  <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.github.url }}">Older</a> {% else %}
+  <span class="pagination-item older">Older</span> {% endif %} {% if paginator.previous_page %}
+  <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.github.url }}">Newer</a> {% else %}
+  <span class="pagination-item newer">Newer</span> {% endif %}
+</div>

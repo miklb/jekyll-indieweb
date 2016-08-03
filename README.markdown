@@ -28,12 +28,15 @@ TODO: Write usage instructions
 ## History
 
 0.1 Initial release
+0.2 Initial Support for Micropub posts
 
 ## Credits
 
 Inspiration for the general aesthetics came from the Jekyll [Type theme](https://github.com/rohanchandra/type-theme)
 
 [svg social icons](http://codepen.io/ruandre/pen/howFi) on CodePen.
+
+[Pelle Wessman - for his work on Jekyll & IndieWeb, particularly Micropub](http://voxpelli.com)
 
 ## License
 
