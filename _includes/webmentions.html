@@ -4,7 +4,7 @@ var sn = document.createElement("script"), s = document.getElementsByTagName("sc
 url = document.querySelectorAll ? document.querySelectorAll("link[rel~=canonical]") : false;
 url = url && url[0] ? url[0].href : false;
 sn.type = "text/javascript"; sn.async = true;
-sn.src = "//webmention.herokuapp.com/api/embed?url" + encodeURIComponent(url || window.location);
+sn.src = "//webmention.herokuapp.com/api/embed?url=" + encodeURIComponent(url || window.location);
 s.parentNode.insertBefore(sn, s);
 }());
 </script>
