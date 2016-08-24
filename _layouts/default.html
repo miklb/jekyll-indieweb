@@ -18,7 +18,11 @@
 	{% seo %}
 </head>
 
-<body class="h-feed">
+<body
+	{% if page.layout == "default" %}
+		class="h-feed"
+	{% endif %}
+>
 
 	<header class="site-header" role="banner">
 		<a class="site-title" href="{{ site.github.url }}/">{{ site.title }}</a>
