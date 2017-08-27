@@ -1,0 +1,11 @@
+<article class="h-entry">
+  <p class="p-name">
+    Liked
+    {% for like in post.mf-like-of %}
+    {% comment %}
+    TODO: Figure out if can get title of like.
+    {% endcomment %}
+      <a class="u-like-of" href="{{like}}">{{like}}</a>{% if forloop.rindex == 2 %} and {% elsif forloop.last != true %}, {% endif %}
+    {% endfor %}
+  </p>
+</article>
