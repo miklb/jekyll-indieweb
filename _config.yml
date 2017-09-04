@@ -36,7 +36,11 @@ author_img: https://avatars3.githubusercontent.com/u/3083652
 
 # Build settings
 markdown: kramdown
-gems:
+
+sass:
+    style: compressed
+
+plugins:
   - github-pages
   - jekyll-paginate
   - jekyll-seo-tag
