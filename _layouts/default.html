@@ -41,18 +41,17 @@
 	{% if page.url == '/' %}
 	{% include hcard.html %}
 	{% endif %}
-	<div id="wrapper">
 		<main role="main">
-			<div class="content">
-				{{ content }}
+			<div class="container">
+					{{ content }}
 			</div>
 		</main>
-
-	</div>
-	<footer class="site-footer" role="contentinfo">
-<p>
-	Built with <a href="https://github.com/miklb/jekyll-indieweb">Jekyll</a> on <a href="https://indiewebcamp.com">IndieWeb principles</a>
-</p>
+	<footer class="footer" role="contentinfo">
+		<div class="container has-text-centered">
+			<p>
+				Built with <a href="https://github.com/miklb/jekyll-indieweb">Jekyll</a> on <a href="https://indiewebcamp.com">IndieWeb principles</a>
+			</p>
+		</div>
 	</footer>
 </body>
 

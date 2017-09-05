@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-<article class="post h-entry">
+<div class="content">
+<article class="content post h-entry">
   <header class="entry-header">
 	  {% if post.title != '' %}
   	<h1 class="post-title p-name">
@@ -43,7 +44,7 @@ layout: default
 
 </footer>
 </article>
-
+</div>
 {% if site.webmentions %}
 {% include webmentions.html %}
 {% endif %}
