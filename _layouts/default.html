@@ -9,7 +9,7 @@
 	<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-	<link rel="stylesheet" href= "{{ site.github.url }}/css/main.css">
+	<link rel="stylesheet" href= "{{ site.github.url }}/assets/css/main.css">
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.github.url | prepend: site.url }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.github.url | prepend: site.url }}">
 	{% if site.webmentions %}
@@ -23,22 +23,21 @@
 		class="h-feed"
 	{% endif %}
 >
-
-	<header class="site-header" role="banner">
-		<a class="site-title" href="{{ site.github.url }}/">{{ site.title }}</a>
-		<nav class="site-nav" role="navigation">
-			<ul>
-				{% assign pages_list = site.pages %}
-      	 {% for node in pages_list %}
-         {% if node.title != null %}
-         {% if node.layout == "page" %}
-				 <li itemprop="url"><a  class="{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a></li>
-				 {% endif %}
-	 {% endif %}
- {% endfor %}
-			</ul>
-		</nav>
-	</header>
+<div class="containier">
+	<div class="navbar">
+		<div class="navbar-brand">
+			<a class="navbar-item" href="{{ site.github.url }}/">{{ site.title }}</a>
+			{% assign pages_list = site.pages %}
+			 {% for node in pages_list %}
+			 {% if node.title != null %}
+			 {% if node.layout == "page" %}
+			 <a  class="navbar-item {% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+			 {% endif %}
+ {% endif %}
+{% endfor %}
+		</div>
+	</div>
+</div>
 	{% if page.url == '/' %}
 	{% include hcard.html %}
 	{% endif %}

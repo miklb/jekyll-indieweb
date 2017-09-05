@@ -4,3 +4,16 @@
 @charset "utf-8";
 @import "variables";
 @import "bulma";
+
+figure.image.is-centered.is-128x128 {
+  margin: 0 auto;
+}
+
+svg {
+  height: 100%;
+width: 100%;
+}
+.soc svg {
+  color: white;
+  fill: white;
+}
