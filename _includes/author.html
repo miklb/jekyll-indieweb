@@ -6,4 +6,6 @@
 	{% assign author = site.author %}
 {% endif %}
 
-<p>{% if author %}Author: <span class="p-name">{{ author }}</span>{% endif %}</p>
+<a href="{{ site.github.url }}" class="entry-author-link" rel="author">
+	<p class="p-name">{% if author %}{{ author }}{% endif %}</p>
+</a>

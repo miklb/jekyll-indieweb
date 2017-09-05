@@ -1,11 +1,11 @@
 ---
 layout: default
 ---
-<div class="content">
+<div class="content is-medium">
 <article class="content post h-entry">
   <header class="entry-header">
 	  {% if post.title != '' %}
-  	<h1 class="post-title p-name">
+  	<h1 class="title p-name">
   		{% if post.mf-bookmark %}
   			<a class="u-bookmark-of" href="{{page.mf-bookmark | first}}">{{post.title}}</a>
   		{% elsif post.mf-bookmark-of %}
@@ -26,22 +26,29 @@ layout: default
   {% include post-content.html post=page %}
   {% endif %}
   <footer class="entry-footer">
-
-      <div class="h-card p-author">
-		        <a href="{{ site.github.url }}" class="entry-author-link" rel="author">
-                  {% if site.author_img %}
-                  <div class="auth-img">
-                    <img src="{{ site.author_img }}" alt="{{ site.author }}" class="u-photo">
-                  </div>
-                  {% endif %}
-                  {% include author.html %}
-            </a>
+      <div class="box h-card p-author">
+        <div class="media">
+          <div class="media-left">
+            {% if site.author_img %}
+            <figure class="image is-64x64">
+                <img src="{{ site.author_img }}" alt="{{ site.author }}" class="u-photo">
+            </figure>
+            {% endif %}
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <strong>
+                {% include author.html %}
+              </strong>
+              <br>
+              <p><a href="{{ post.url | prepend: site.github.url }}">{{ page.title }} </a> posted on <time datetime="{{ page.date | date_to_xmlschema }}" class="dt-time post-date">{{ page.date | date_to_string }}</time>.</p>
+            </div>
+            <div class="tags">
+              {% for tags in page.tags %}<span class="tag">{{ tags }} </span>{% endfor %}
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="meta-wrap">
-        <p><a href="{{ post.url | prepend: site.github.url }}">{{ page.title }} </a> posted on <time datetime="{{ page.date | date_to_xmlschema }}" class="dt-time post-date">{{ page.date | date_to_string }}</time>.</p>
-        <p>This entry has been tagged with the keywords: {% for tags in page.tags %}<span class="tag">{{ tags }} </span>{% endfor %}</p>
-    </div>
-
 </footer>
 </article>
 </div>
