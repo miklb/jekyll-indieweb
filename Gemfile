@@ -1,7 +1,4 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-gem 'jekyll'
-gem 'jekyll-paginate'
-gem 'jekyll-gist'
-# TODO: investigate using suggested code to get latest version of gh-pages.
-gem 'github-pages'
+source "https://rubygems.org"
+gemspec
