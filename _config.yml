@@ -41,7 +41,6 @@ sass:
     style: compressed
 
 plugins:
-  - github-pages
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-gist

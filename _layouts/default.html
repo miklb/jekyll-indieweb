@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
+	<!---TODO: PWA
+	<link rel="manifest" href="site.webmanifest">
+	-->
 	<link rel="stylesheet" href= "{{ site.github.url }}/assets/css/main.css">
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.github.url | prepend: site.url }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.github.url | prepend: site.url }}">
@@ -16,43 +16,29 @@
 	<link rel="webmention" href="https://webmention.herokuapp.com/api/webmention" />
 	{% endif %}
 	{% seo %}
+	<meta name="theme-color" content="#fdfdfd">
 </head>
-
-<body
-	{% if page.layout == "default" %}
-		class="h-feed"
-	{% endif %}
->
-<div class="containier">
-	<div class="navbar">
-		<div class="navbar-brand">
-			<a class="navbar-item" href="{{ site.github.url }}/">{{ site.title }}</a>
-			{% assign pages_list = site.pages %}
-			 {% for node in pages_list %}
-			 {% if node.title != null %}
-			 {% if node.layout == "page" %}
-			 <a  class="navbar-item {% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
-			 {% endif %}
- {% endif %}
-{% endfor %}
-		</div>
-	</div>
-</div>
-	{% if page.url == '/' %}
-	{% include hcard.html %}
-	{% endif %}
-		<main role="main">
-			<div class="container">
+	<body
+		{% if page.layout == "default" %}
+			class="h-feed"
+		{% endif %}
+	>
+		<div class="wrapper">
+			<header class="mainheader">
+			</header>
+			{% if page.url == '/' %}
+			{% include hcard.html %}
+			{% endif %}
+			<main class="content">
 					{{ content }}
-			</div>
-		</main>
-	<footer class="footer" role="contentinfo">
-		<div class="container has-text-centered">
-			<p>
-				Built with <a href="https://github.com/miklb/jekyll-indieweb">Jekyll</a> on <a href="https://indiewebcamp.com">IndieWeb principles</a>
-			</p>
+			</main>
+			<aside class="sidebar">
+			</aside>
+			<footer class="mainfooter" role="contentinfo">
+				<p>
+					Built with <a href="https://github.com/miklb/jekyll-indieweb">Jekyll</a> on <a href="https://indiewebcamp.com">IndieWeb principles</a>
+				</p>
+			</footer>
 		</div>
-	</footer>
-</body>
-
+	</body>
 </html>

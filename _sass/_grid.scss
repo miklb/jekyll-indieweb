@@ -1,0 +1,44 @@
+.mainheader {
+    grid-area: header;
+  }
+
+  .content {
+    grid-area: content;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+  }
+
+  .mainfooter {
+    grid-area: footer;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-areas:
+      "header"
+      "content"
+      "sidebar"
+      "footer";
+  }
+
+  @media (min-width: 550px) {
+
+    .wrapper {
+      grid-column-gap: 2em;
+      grid-row-gap: 20px;
+      grid-template-columns: 2fr 4fr;
+      grid-template-areas:
+        "header  header"
+        "sidebar content"
+        "footer footer"
+    }
+
+
+}
+

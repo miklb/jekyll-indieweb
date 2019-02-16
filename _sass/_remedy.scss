@@ -1,0 +1,89 @@
+/* Level the playing field some */
+
+* { box-sizing: border-box; } /* Switch to border-box for box-sizing. */
+
+/* Immediately jump any animation to the end point if the user has set their device to "prefers reduced motion". */
+/* This could create bad unintended consequences. Remove as needed, and write your own appropriate code for prefers-reduced-motion. */
+@​media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+}
+
+body {
+  margin: 0; /* Remove the tiny space around the edge of the page */
+}
+
+/* Switch to using rem units for typography. Fix line-height on headlines. */
+h1 {
+  font-size: 2rem; /* Make all H1 large, remove nested-shrinking sizes. */
+  margin: 0.67em 0;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.17rem;
+}
+h4 {
+  font-size: 1.00rem;
+}
+h5 {
+  font-size: 0.83rem;
+}
+h6 {
+  font-size: 0.67rem;
+}
+
+h2, h3, h4, h5, h6{
+  line-height: 1;
+}
+
+/* Improve readibility */
+p {
+  line-height: 1.5; 
+}
+
+
+pre { 
+  white-space: pre-wrap; /* Overflow by default is bad. */
+}
+
+
+/* are browsers now consistent with margin & padding on lists?
+  See: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Consistent_list_indentation  */
+nav ul {
+  list-style: none;
+}
+
+ 
+img {
+  border-style: none; /* Remove the border on images inside links in IE 10 and earlier. */
+  vertical-align: bottom;  /* Fix problem with images having a tiny gap for a decender under them. */
+  display: block; /* Switch display mode to block, since that's what we usually want for images. */
+  max-width: 100%; /* Make images flexible by default. */
+  height: auto; /* ensure images maintain their aspect ratio when max-width comes into play. */
+}
+
+
+/* In English, when styling the <q> element, use curly quotes instead of straight quotes. */
+
+/* Code for this is now in the quotes.css file */ 
+
+
+/* Support upcoming properties that haven't been broadly implemented yet,
+   but for which the initial value and legacy behavior is not be the best behavior.
+*/
+
+/* Consistent line spacing, which does not unecessarily grow to accomodate things that would fit anyway */
+:root {
+  line-sizing: normal;
+}
+
+/* Improve spacing of punctuation marks and at script changes in CJK languages */
+:root {
+  text-spacing: trim-start allow-end trim-adjacent ideograph-alpha ideograph-numeric;
+}
+
+

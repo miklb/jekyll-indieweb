@@ -1,34 +1,20 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
+
 @charset "utf-8";
 @import "variables";
-@import "bulma";
+@import "remedy";
+@import "grid";
 
-main {
-  margin-top: 3em;
+html {
+    background: $bg;
+    color: $text;
 }
 
-figure.image.is-centered.is-128x128 {
-  margin: 0 auto;
-}
 
-svg {
-  height: 100%;
-  width: 100%;
-}
-
-.soc svg {
-  color: white;
-  fill: white;
-}
-
-.entry-footer {
-  .box {
-    margin-top: 2em;
+@media (prefers-color-scheme: dark) {
+    body {
+      color: $bg;
+      background-color:$dark;
+    }
   }
-}
-
-.footer {
-  margin-top: 3em;
-}
