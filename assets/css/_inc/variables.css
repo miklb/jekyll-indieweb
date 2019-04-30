@@ -1,0 +1,12 @@
+:root {
+    --black: #000000;
+    --gray: #6b757b;
+    --light: #fdfdfd;
+    --dark: #050709;
+    --blue: #1460aa;
+    --red: #aa0000;
+    --green: #008040;
+    --yellow: #FADC4E;
+    --bg: var(--light);
+    --text: var(--gray);
+}

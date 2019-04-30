@@ -1,0 +1,38 @@
+{
+  "name": "jekyll-indieweb",
+  "version": "2.0.0a",
+  "description": "A Jekyll theme for the IndieWeb.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miklb/jekyll-indieweb.git"
+  },
+  "author": "Michael Bishop",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miklb/jekyll-indieweb/issues"
+  },
+  "homepage": "https://github.com/miklb/jekyll-indieweb#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.5",
+    "cssnano": "^4.1.10",
+    "del": "^4.1.1",
+    "gulp": "^4.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "postcss-cli": "^6.1.2",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-custom-selectors": "^5.1.2",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-logical": "^3.0.0",
+    "postcss-media-minmax": "^4.0.0",
+    "postcss-preset-env": "^6.6.0",
+    "postcss-utilities": "^0.8.0",
+    "uslug": "^1.0.4"
+  }
+}

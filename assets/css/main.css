@@ -1,0 +1,9 @@
+@import "./_inc/variables";
+@import "./_inc/remedy";
+@import "./_inc/*.css";
+
+html {
+    background: var(--bg);
+    color: var(--text);
+}
+
