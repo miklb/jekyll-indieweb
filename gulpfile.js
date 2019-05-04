@@ -12,11 +12,12 @@ const plumber = require("gulp-plumber");
 const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
 const easyimport = require("postcss-easy-import");
-const pclogical = require("postcss-logical");
-const pccustommedia = require("postcss-custom-media");
-const pccustomselectors = require("postcss-custom-selectors");
-const pcmediaminmax = require("postcss-media-minmax");
-const pcpresetenv = require("postcss-preset-env");
+const csslogical = require("postcss-logical");
+const cssCustomMedia = require("postcss-custom-media");
+const cssCustomSelectors = require("postcss-custom-selectors");
+const cssMediaMinMax = require("postcss-media-minmax");
+const cssPresentEnv = require("postcss-preset-env");
+const cssDeclarationSorter = require('css-declaration-sorter');
 
 // BrowserSync
 function browserSync(done) {
@@ -46,13 +47,16 @@ function clean() {
 function css() {
   var plugins = [
     easyimport(),
-    pclogical({
+    csslogical({
       dir: 'ltr'
     }),
-    pccustommedia(),
-    pccustomselectors(),
-    pcmediaminmax(),
-    pcpresetenv()
+    cssCustomMedia(),
+    cssCustomSelectors(),
+    cssMediaMinMax(),
+    cssPresentEnv(),
+    cssDeclarationSorter({
+      order: 'concentric-css'
+    })
   ]
   return gulp
     .src("./assets/css/*.css")
@@ -72,17 +76,17 @@ function jekyll() {
 
 // Watch files
 function watchFiles() {
-  gulp.watch("./assets/css/*", css);
+  gulp.watch("./assets/css/**/*", css);
   gulp.series(css, browserSyncReload)
   gulp.watch(
     [
       "./_includes/**/*",
       "./_layouts/**/*",
       "./_pages/**/*",
-      "./_posts/**/*",
-      "./_projects/**/*"
+      "./_posts/**/*"
+      
     ],
-    gulp.series(jekyll, browserSyncReload)
+    gulp.series(jekyll, css, browserSyncReload)
   );
 }
 

@@ -3,4 +3,8 @@
       color: var(--bg);
       background-color:var(--dark);
     }
+
+    .navbar-item a {
+      color: var(--light);
+  }
   }

@@ -1,6 +1,8 @@
 @import "./_inc/variables";
 @import "./_inc/remedy";
-@import "./_inc/*.css";
+@import "./_inc/grid.css";
+@import "./_inc/hcard.css";
+@import "./_inc/darkmode.css";
 
 html {
     background: var(--bg);
