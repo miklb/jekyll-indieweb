@@ -1,50 +1,106 @@
+.usercard-wrapper {
+    margin: 5em auto;
+    max-width: 1100px;
+}
+
+.usercard-wrapper .row {
+    display: flex;
+    flex-direction: column;
+}
+
+.usercard-wrapper .row .col {
+    flex-grow: 1;
+}
 .usercard {
+    background: var(--gray);
     display: flex;
     flex-basis: 0;
-    min-height: 15 em;
-    background: var(--gray);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     overflow: hidden;
-    border-radius: 4px;    
-}
-
-.avatar {
-    position: relative;
-    width: 50%;
-    z-index: 49;
-    overflow: hidden;
-}
-
-.avatar:after {
-    content: '';
-    position: absolute;
-    right: -16%;
-    top: 0;
-    transform: skewx(-10deg);
-    height: 100%;
-    width: 20%;
-    min-width: 90px;
-    background: var(--gray);
-}
-
-.avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: .3s;
+    border-radius: 4px;
 }
 
 .profiles {
     display: flex;
     list-style-type: none;
 	flex-flow: row wrap;
-	justify-content: flex-end;
-	margin: 0;
+	justify-content: center;
+	margin: 1.5em 0;
 }
 
 .profile svg {
-    width: 4rem;
-    height: 4rem;
+    width: 1em;
+    height: 1em;
     border-radius: 50%;
+    border: none;
+    outline: none;
+    font-size: 3em;
+    cursor: pointer;
     opacity: .9;
+}
+
+.profile .icon {
+    fill: var(--light);
+}
+
+.usercard-avatar {
+    position: relative;
+    width: 50%;
+    z-index: 49;
+    overflow: hidden; 
+}
+
+    .usercard .usercard-avatar .usercard-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .3s;
+}
+    
+ .usercard-body {
+    position: relative;
+    width: 60%;
+    padding: 3em 3em 2em;
+    background-color: var(--dark-gray);
+    color: var(--light);
+    text-align: center;
+}
+
+    .usercard-title {
+      font-size: 3em;
+      margin-bottom: .4em;
+      
+}
+
+  .usercard:hover .usercard-img {
+    transform: scale(1.1) rotate(3deg);
+}
+
+@media (max-width: 550px) {
+    .usercard {
+        flex-direction: column;
+    }
+
+
+  .usercard-avatar {
+      width: 100%;
+  }
+
+  .usercard-body {
+      width: 100%;
+  };
+}
+
+@media (min-width: 550px) {
+    .usercard .usercard-avatar:after {
+        content: '';
+        position: absolute;
+        right: -16%;
+        top: 0;
+        transform: skewx(-10deg);
+        height: 100%;
+        width: 20%;
+        min-width: 90px;
+        background: var(--dark-gray);
+  }
 }
