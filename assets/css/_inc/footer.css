@@ -1,0 +1,12 @@
+
+.colophon {
+    text-align: center;
+    background: var(--dark-gray);
+    color: var(--very-light-gray);
+    min-height: 5em;
+    font-size: 1.3em;
+}
+
+.colophon p:first-of-type {
+    padding-top: 1em;
+}
