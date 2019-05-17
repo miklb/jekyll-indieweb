@@ -21,6 +21,8 @@
 	<body
 		{% if page.layout == "default" %}
 			class="{{page.bodyClass}} h-feed"
+			{% else %}
+			class="{{page.layout}}-content"
 		{% endif %}
 	>
 		<div class="wrapper">

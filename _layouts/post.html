@@ -1,8 +1,9 @@
 ---
 layout: default
+bodyClass: post-single
 ---
-<div class="content is-medium">
-<article class="content post h-entry">
+
+<article class="post h-entry">
   <header class="entry-header">
 	  {% if post.title != '' %}
   	<h1 class="title p-name">
@@ -20,38 +21,18 @@ layout: default
   	</h1>
   {% endif %}
   </header>
-  {% if page.mf-like-of != null %}
+  <div class="entry-content">
+     {% if page.mf-like-of != null %}
   {% include post-like.html post=page %}
 {% else %}
   {% include post-content.html post=page %}
   {% endif %}
+  </div>
   <footer class="entry-footer">
-      <div class="box h-card p-author">
-        <div class="media">
-          <div class="media-left">
-            {% if site.author_img %}
-            <figure class="image is-64x64">
-                <img src="{{ site.author_img }}" alt="{{ site.author }}" class="u-photo">
-            </figure>
-            {% endif %}
-          </div>
-          <div class="media-content">
-            <div class="content">
-              <strong>
-                {% include author.html %}
-              </strong>
-              <br>
-              <p><a href="{{ post.url | prepend: site.github.url }}">{{ page.title }} </a> posted on <time datetime="{{ page.date | date_to_xmlschema }}" class="dt-time post-date">{{ page.date | date_to_string }}</time>.</p>
-            </div>
-            <div class="tags">
-              {% for tags in page.tags %}<span class="tag">{{ tags }} </span>{% endfor %}
-            </div>
-          </div>
-        </div>
-      </div>
+    {% include post-hcard.html %}    
 </footer>
 </article>
-</div>
+
 {% if site.webmentions %}
 {% include webmentions.html %}
 {% endif %}

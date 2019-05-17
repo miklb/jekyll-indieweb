@@ -1,13 +1,45 @@
 :root {
-    --black: #000000;
-    --gray: #6b757b;
-    --dark-gray: #383f46;
-    --light: #fdfdfd;
-    --dark: #050709;
-    --blue: #1460aa;
-    --red: #aa0000;
-    --green: #008040;
-    --yellow: #FADC4E;
-    --bg: var(--light);
-    --text: var(--gray);
+    /* CityLights http://citylights.xyz */
+    --very-light-gray: #B7C5D3;
+    --light-gray: #718CA1;
+    --gray: #41505E;
+    --dark-gray: #333F4A;
+    --very-dark-gray: #1D252C;
+
+    --color1light: #70E1E8;
+    --color1medium: #33CED8;
+    --color1dark: #008B94;
+
+    --color2light: #5EC4FF;
+    --color2medium: #68A1F0;
+    --color2dark: #539AFC;
+
+    --color3light:#E27E8D;
+    --color3medium:#D95468;
+    --color3dark:#B62D65;
+
+    --color4light: #EBBF83;
+    --color4dark: #D98E48;
+
+    --color5light: #8BD49C;
+
+    --color6dark: #718CA1;
+
+    --color7light: #8BD49C;
+
+
+    --cyan: var(--color1light);
+    --blue: var(--color2light);
+    --purple: var(--color3dar)k;
+    --pink: var(--color3ligh)t;
+    --yellow: var(--color4light);
+    --green: var(--color5light);
+    --red: var(--color3medium);
+    --orange: var(--color4dark);
+    --light-orange: var(--color4light);
+
+    --bg: var(--very-light-gray);
+    --text: var(--dark-gray);
+    --highlight: #ecf285;
 }
+

@@ -1,10 +1,35 @@
 @media (prefers-color-scheme: dark) {
     body {
-      color: var(--bg);
-      background-color:var(--dark);
+      color: var(--yellow);
+      background-color:var(--very-dark-gray);
     }
+
+    a:visited { 
+      color: var(--red);
+  }
 
     .navbar-item a {
       color: var(--light);
   }
+
+  .subtitle {
+    color: var(--color2dark);
+}
+
+.post-date {
+  color: var(--blue);
+}
+
+
+    .tag {
+      background: var(--gray);
+    }
+
+    .tag::before, .tag::after {
+      background: var(--very-dark-gray);
+    }
+
+    .tag::after {
+      border-left: 10px solid var(--gray);
+    }
   }

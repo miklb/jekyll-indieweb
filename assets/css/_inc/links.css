@@ -1,0 +1,28 @@
+a {
+    outline        : none;
+    text-decoration: none;
+    padding        : 2px 1px 0;
+}
+
+
+a:link {
+    color: var(--red);
+}
+
+a:visited { 
+    color: var(--dark);
+}
+
+a:focus {
+    border-bottom: 1px solid var(--red);
+    background: var(--yellow);
+}
+
+a:hover {
+    border-bottom: 1px solid;     
+    background: var(--yellow);
+  }
+  
+  a:active {
+    color: var(--highlight);
+  }

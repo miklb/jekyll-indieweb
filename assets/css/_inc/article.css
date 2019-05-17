@@ -1,0 +1,108 @@
+
+main article {
+    display: flex;
+    margin: 0 3em;
+}
+
+.post-content article {
+    flex-wrap: wrap;
+}
+
+.entry-header {
+    padding-right: 2em;
+    min-width: 20vw;
+    flex-grow: 2;
+}
+
+.title {
+    color: var(--very-dark-gray);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--orange);
+}
+
+.post-date {
+    color: var(--gray);
+}
+
+.entry-content {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.entry-content p:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 140%;
+}
+/* Ripped from https://css-tricks.com/snippets/css/drop-caps/ */
+.entry-content p:first-child:first-letter {
+    color: var(--red);
+    float: left;
+    font-family: Georgia;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+  }
+/* Inspired by https://codepen.io/wbeeftink/pen/dIaDH */
+  .tag {
+    background: var(--light-gray);
+    border-radius: 3px 0 0 3px;
+    color: #999;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 20px 0 23px;
+    position: relative;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    -webkit-transition: color 0.2s;
+  }
+  
+  .tag::before {
+    background: var(--bg);
+    border-radius: 10px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+    content: '';
+    height: 6px;
+    left: 10px;
+    position: absolute;
+    width: 6px;
+    top: 10px;
+  }
+  
+  .tag::after {
+    background: var(--bg);
+    border-bottom: 13px solid transparent;
+    border-left: 10px solid var(--light-gray);
+    border-top: 13px solid transparent;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .tag:hover {
+    background-color: var(--red);
+    color: white;
+  }
+  
+  .tag:hover::after {
+     border-left-color: var(--red); 
+  }
+
+  .entry-footer {
+      height: 150px;
+      width: 49vw;
+  }
+
+@media (max-width: 550px) {
+    main article {
+        flex-direction: column;
+    }
+}
+

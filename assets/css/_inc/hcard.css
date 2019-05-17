@@ -1,3 +1,5 @@
+/* Inspiration https://responsivemart.com/ui_design/css-user-profile-card/ */
+
 .usercard-wrapper {
     margin: 5em auto;
     max-width: 1100px;
@@ -50,7 +52,7 @@
     overflow: hidden; 
 }
 
-    .usercard .usercard-avatar .usercard-img {
+    .usercard-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -66,9 +68,10 @@
     text-align: center;
 }
 
-    .usercard-title {
-      font-size: 3em;
-      margin-bottom: .4em;
+    .usercard .title {
+    color: var(--very-light-gray);
+    font-size: 2.5rem;
+    margin-bottom: .4em;
       
 }
 
@@ -104,3 +107,120 @@
         background: var(--dark-gray);
   }
 }
+
+/* ripped from Rachel Andrews https://gridbyexample.com/patterns/media-object/ */
+
+
+
+.media {
+    margin-bottom: 2em;
+    border: 2px solid #444;
+    padding: 10px;
+  }
+  
+  .media > .media-title { grid-area: media-title; }
+  .media > .img { grid-area: img; }
+  .media > .media-content { grid-area: bd; }
+  .media > .media-footer { grid-area: ft; }
+  
+  .media {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-areas:
+      "media-title"
+      "img"
+      "bd"
+      "ft";
+  }
+  
+  
+  @media (min-width: 600px) {
+  
+    /* clearfix*/
+    .media:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  
+    .media > .media {
+      margin-left: 160px;
+      clear: both;
+    }
+  
+    .media .img {
+      float: left;
+      margin: 0 10px 0 0;
+      width: 150px;
+    }
+    
+    .media .media-footer {
+      background-color: #eee;
+      padding: 10px;
+    }
+  
+    .media.media-flip .img {
+      float: right;
+      margin: 0 0 0 10px;
+    }
+  
+    .media > * {
+      margin: 0 0 0 160px;
+    }
+  
+    .media.media-flip > * {
+      margin: 0 160px 0 0;
+    }
+  
+    @supports(display: grid ) {
+      /* override */
+      .media > *,
+      .media.media-flip > * {
+        margin: 0;
+      }
+      .media .img,
+      .media.media-flip .img {
+        width: auto;
+        margin: 0;
+      }
+      .media:after {
+        content: none;
+      }
+  
+      .media {
+        display: grid;
+        grid-column-gap: 20px;
+        grid-template-columns: 150px 3fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+          "img media-title"
+          "img bd"
+          "ft ft";
+      }
+  
+      .media.media-flip {
+        grid-template-columns: 3fr 150px ;
+        grid-template-areas:
+          "media-title img"
+          "bd img"
+          "ft ft";
+      }
+  
+      .media.img-flexie {
+        grid-template-columns: minmax(150px, 1fr) 3fr;
+      }
+  
+      .media.media-flip.img-flexie {
+        grid-template-columns: 3fr minmax(150px, 1fr);
+      }
+  
+      /* nested */
+      .media > .media {
+        grid-column: 2 / -1 ;
+        margin: 0; /* override */
+        margin-top: 1em;
+      }
+    }
+  
+  
+  }

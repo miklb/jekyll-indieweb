@@ -1,0 +1,31 @@
+<div class="h-card p-author">
+  <div class="media media-flip img-flexie">
+    <div class="img">
+      <img class="u-photo" alt="{{site.author}}" src="{{ site.author_img }}">
+    </div>
+    <h2 class="p-name media-title">
+      {% if post.author %}
+        {% assign author = post.author %}
+      {% elsif page.author %}
+        {% assign author = page.author %}
+      {% else %}
+        {% assign author = site.author %}
+      {% endif %}
+      <a href="{{ site.github.url }}" class="entry-author-link" rel="author">
+      	{% if author %}{{ author }}{% endif %}
+      </a> 
+    </h2>
+    <div class="media-content">
+      <p>{{ site.bio }}</p>
+    </div>
+    <div class="media-footer">
+      <p>
+      <a href="{{ post.url | prepend: site.github.url }}">{{ page.title }} </a> posted on <time datetime="{{ page.date | date_to_xmlschema }}" class="dt-time post-date">{{ page.date | date_to_string }}</time>.
+      </p>
+      <div class="tags">
+        {% for tags in post.tags %}
+        <a class="tag" href="/tags/{{tags}}">{{ tags }}</a>
+				{% endfor %}
+      </div>
+  </div>
+</div>
