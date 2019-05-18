@@ -101,8 +101,16 @@ main article {
   }
 
 @media (max-width: 550px) {
+    .content {
+      padding: 2em 0;
+    }
     main article {
         flex-direction: column;
+        margin: 0 1em;
+    }
+
+    .entry-footer {
+      width: 100%;
     }
 }
 
