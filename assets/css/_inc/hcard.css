@@ -114,7 +114,6 @@
 
 .media {
     margin-bottom: 2em;
-    border: 2px solid #444;
     padding: 10px;
   }
   
@@ -124,6 +123,7 @@
   .media > .media-footer { grid-area: ft; }
   
   .media {
+    background: var(--gray);
     display: grid;
     grid-column-gap: 20px;
     grid-template-areas:
@@ -155,8 +155,13 @@
     }
     
     .media .media-footer {
-      background-color: #eee;
+      background-color: var(--gray);
       padding: 10px;
+    }
+
+    .media-footer .profiles {
+      padding: 0;
+      margin: 0;
     }
   
     .media.media-flip .img {

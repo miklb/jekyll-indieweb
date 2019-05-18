@@ -25,11 +25,15 @@
       background: var(--gray);
     }
 
+    .media-content .tag {
+      background: var(--very-dark-gray)
+    }
+
     .tag::before, .tag::after {
-      background: var(--very-dark-gray);
+      background: var(--gray);
     }
 
     .tag::after {
-      border-left: 10px solid var(--gray);
+      border-left: 10px solid var(--very-dark-gray);
     }
   }

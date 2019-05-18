@@ -30,6 +30,7 @@ facebook_url: http://facebook.com
 
 # Can be over ridden with author: in Front Matter
 author: Your Name
+bio: This is a small blurb that is used on the single post h-card that can be used separate from `site.description`.
 
 # Expecting a full url, not relative to site.url
 author_img: https://avatars3.githubusercontent.com/u/3083652
