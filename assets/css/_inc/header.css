@@ -1,0 +1,45 @@
+/*
+    Header
+*/
+
+.mainheader {
+    display: grid;
+	grid-template-columns: 2fr 2fr;
+}
+
+.site-branding {
+    justify-self: start;
+    margin: 2rem;
+}
+
+.mainnav {
+    margin-top: 2rem;
+}
+
+.mainnav ul {
+    display: inline;
+/*     align-items: baseline; */
+	list-style-type: none;
+}
+
+.navbar-item {
+    margin-right: 1.5rem;
+    font-size: 1.6rem;
+	font-family: serif;
+}
+
+.navbar-item a {
+    color: var(--dark);
+}
+
+@media (min-width: 550px) {
+    .mainnav ul {
+		display: flex;
+	/*     align-items: baseline; */
+		list-style-type: none;
+		flex-flow: row wrap;
+  /* This aligns items to the end line on main-axis */
+		  justify-content: flex-end;
+		  margin: 0;
+	}
+}
