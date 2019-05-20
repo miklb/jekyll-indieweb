@@ -59,11 +59,11 @@ function css() {
     })
   ]
   return gulp
-    .src("./assets/css/*.css")
+    .src("./assets/css/_inc/main.css")
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest("./_site/assets/css/"))
+    .pipe(gulp.dest("./assets/css/"))
     .pipe(browsersync.stream());
 }
 

@@ -1,0 +1,15 @@
+@import "variables";
+@import "remedy";
+@import "grid.css";
+@import "header.css";
+@import "hcard.css";
+@import "links.css";
+@import "article.css";
+@import"footer.css";
+@import "darkmode.css";
+
+html {
+    background: var(--bg);
+    color: var(--text);
+}
+

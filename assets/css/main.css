@@ -1,15 +1,633 @@
-@import "./_inc/variables";
-@import "./_inc/remedy";
-@import "./_inc/grid.css";
-@import "./_inc/header.css";
-@import "./_inc/hcard.css";
-@import "./_inc/links.css";
-@import "./_inc/article.css";
-@import"./_inc/footer.css";
-@import "./_inc/darkmode.css";
+:root {
+    /* CityLights http://citylights.xyz */
+    --very-light-gray: #B7C5D3;
+    --light-gray: #718CA1;
+    --gray: #41505E;
+    --dark-gray: #333F4A;
+    --very-dark-gray: #1D252C;
 
-html {
+    --color1light: #70E1E8;
+    --color1medium: #33CED8;
+    --color1dark: #008B94;
+
+    --color2light: #5EC4FF;
+    --color2medium: #68A1F0;
+    --color2dark: #539AFC;
+
+    --color3light:#E27E8D;
+    --color3medium:#D95468;
+    --color3dark:#B62D65;
+
+    --color4light: #EBBF83;
+    --color4dark: #D98E48;
+
+    --color5light: #8BD49C;
+
+    --color6dark: #718CA1;
+
+    --color7light: #8BD49C;
+
+
+    --cyan: var(--color1light);
+    --blue: var(--color2light);
+    --purple: var(--color3dar)k;
+    --pink: var(--color3ligh)t;
+    --yellow: var(--color4light);
+    --green: var(--color5light);
+    --red: var(--color3medium);
+    --orange: var(--color4dark);
+    --light-orange: var(--color4light);
+
+    --bg: var(--very-light-gray);
+    --text: var(--dark-gray);
+    --highlight: #ecf285;
+}
+/* Level the playing field some */
+* { box-sizing: border-box; }
+/* Switch to border-box for box-sizing. */
+/* Immediately jump any animation to the end point if the user has set their device to "prefers reduced motion". */
+/* This could create bad unintended consequences. Remove as needed, and write your own appropriate code for prefers-reduced-motion. */
+@​media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.001s !important;
+            animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+}
+body {
+  margin: 0; /* Remove the tiny space around the edge of the page */
+}
+/* Switch to using rem units for typography. Fix line-height on headlines. */
+h1 {
+  margin: 0.67em 0;
+  font-size: 2rem; /* Make all H1 large, remove nested-shrinking sizes. */
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.17rem;
+}
+h4 {
+  font-size: 1.00rem;
+}
+h5 {
+  font-size: 0.83rem;
+}
+h6 {
+  font-size: 0.67rem;
+}
+h2, h3, h4, h5, h6{
+  line-height: 1;
+}
+/* Improve readibility */
+p {
+  line-height: 1.5; 
+}
+pre { 
+  white-space: pre-wrap; /* Overflow by default is bad. */
+}
+/* are browsers now consistent with margin & padding on lists?
+  See: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Consistent_list_indentation  */
+nav ul {
+  list-style: none;
+}
+img {
+  display: block; /* Switch display mode to block, since that's what we usually want for images. */
+  vertical-align: bottom;  /* Fix problem with images having a tiny gap for a decender under them. */
+  border-style: none; /* Remove the border on images inside links in IE 10 and earlier. */
+  max-width: 100%; /* Make images flexible by default. */
+  height: auto; /* ensure images maintain their aspect ratio when max-width comes into play. */
+}
+/* In English, when styling the <q> element, use curly quotes instead of straight quotes. */
+/* Code for this is now in the quotes.css file */
+/* Support upcoming properties that haven't been broadly implemented yet,
+   but for which the initial value and legacy behavior is not be the best behavior.
+*/
+/* Consistent line spacing, which does not unecessarily grow to accomodate things that would fit anyway */
+:root {
+  line-sizing: normal;
+}
+/* Improve spacing of punctuation marks and at script changes in CJK languages */
+:root {
+  -ms-text-spacing: trim-start allow-end trim-adjacent ideograph-alpha ideograph-numeric;
+      text-spacing: trim-start allow-end trim-adjacent ideograph-alpha ideograph-numeric;
+}
+.wrapper {
+    grid-row-gap: 10px;
+    grid-template-areas:
+      "header"
+      "content"
+      "sidebar"
+      "footer";
+    margin: 0 auto;
+}
+.mainheader {
+    grid-area: header;
+}
+.content {
+    grid-area: content;
+	padding: 20px;
+}
+.sidebar {
+    grid-area: sidebar;
+}
+/*
+    Main footer
+*/
+.colophon {
+    grid-area: footer;
+}
+/*
+    Grid
+*/
+@media (min-width: 550px) {
+
+	.home .site {
+		grid-column-gap: 2rem;
+		grid-row-gap: 20rem;
+		grid-template-areas:
+		  "header  header"
+		  "content content"
+		  "footer footer";
+		grid-template-columns: 2fr 4fr
+	  }
+
+    .site {
+      grid-column-gap: 2rem;
+      grid-row-gap: 2rem;
+      grid-template-areas:
+        "header  header"
+        "sidebar content"
+        "footer footer";
+      grid-template-columns: 2fr 4fr
+	}
+
+	
+
+
+}
+/*
+    Header
+*/
+.mainheader {
+    display: grid;
+	grid-template-columns: 2fr 2fr;
+}
+.site-branding {
+    justify-self: start;
+    margin: 2rem;
+}
+.mainnav {
+    margin-top: 2rem;
+}
+.mainnav ul {
+    display: inline;
+/*     align-items: baseline; */
+	list-style-type: none;
+}
+.navbar-item {
+    margin-right: 1.5rem;
+	font-family: serif;
+    font-size: 1.6rem;
+}
+.navbar-item a {
+    color: var(--dark);
+}
+@media (min-width: 550px) {
+    .mainnav ul {
+		display: flex;
+		flex-flow: row wrap;
+  /* This aligns items to the end line on main-axis */
+		  justify-content: flex-end;
+		  margin: 0;
+	/*     align-items: baseline; */
+		list-style-type: none;
+	}
+}
+/* Inspiration https://responsivemart.com/ui_design/css-user-profile-card/ */
+.usercard-wrapper {
+    margin: 5em auto;
+    max-width: 1100px;
+}
+.usercard-wrapper .row {
+    display: flex;
+    flex-direction: column;
+}
+.usercard-wrapper .row .col {
+    flex-grow: 1;
+}
+.usercard {
+    display: flex;
+    flex-basis: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 4px;
+    background: #41505E;
+    background: var(--gray);
+    overflow: hidden;
+}
+.profiles {
+    display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin: 1.5em 0;
+    list-style-type: none;
+}
+.profile svg {
+    opacity: .9;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    font-size: 3em;
+}
+.profile .icon {
+    fill: var(--light);
+}
+.usercard-avatar {
+    position: relative;
+    z-index: 49;
+    width: 50%;
+    overflow: hidden; 
+}
+.usercard-img {
+      -o-object-fit: cover;
+      transition: .3s;
+      width: 100%;
+      height: 100%;
+         object-fit: cover;
+}
+.usercard-body {
+    position: relative;
+    background-color: #333F4A;
+    background-color: var(--dark-gray);
+    padding: 3em 3em 2em;
+    width: 60%;
+    color: var(--light);
+    text-align: center;
+}
+.usercard .title {
+    margin-bottom: .4em;
+    color: #B7C5D3;
+    color: var(--very-light-gray);
+    font-size: 2.5rem;
+      
+}
+.usercard:hover .usercard-img {
+    -webkit-transform: scale(1.1) rotate(3deg);
+            transform: scale(1.1) rotate(3deg);
+}
+@media (max-width: 550px) {
+    .usercard {
+        flex-direction: column;
+    }
+
+
+  .usercard-avatar {
+      width: 100%;
+  }
+
+  .usercard-body {
+      width: 100%;
+  };
+}
+@media (min-width: 550px) {
+    .usercard .usercard-avatar:after {
+        -webkit-transform: skewx(-10deg);
+        position: absolute;
+        top: 0;
+        right: -16%;
+                transform: skewx(-10deg);
+        background: #333F4A;
+        background: var(--dark-gray);
+        width: 20%;
+        min-width: 90px;
+        height: 100%;
+        content: '';
+  }
+}
+/* ripped from Rachel Andrews https://gridbyexample.com/patterns/media-object/ */
+.media {
+    margin-bottom: 2em;
+    padding: 10px;
+  }
+.media > .media-title { grid-area: media-title; }
+.media > .img { grid-area: img; }
+.media > .media-content { grid-area: bd; }
+.media > .media-footer { grid-area: ft; }
+.media {
+    grid-column-gap: 20px;
+    display: grid;
+    grid-template-areas:
+      "media-title"
+      "img"
+      "bd"
+      "ft";
+    background: #41505E;
+    background: var(--gray);
+  }
+@media (min-width: 600px) {
+  
+    /* clearfix*/
+    .media:after {
+      display: block;
+      clear: both;
+      content: "";
+    }
+  
+    .media > .media {
+      clear: both;
+      margin-left: 160px;
+    }
+  
+    .media .img {
+      float: left;
+      margin: 0 10px 0 0;
+      width: 150px;
+    }
+    
+    .media .media-footer {
+      background-color: #41505E;
+      background-color: var(--gray);
+      padding: 10px;
+    }
+
+    .media-footer .profiles {
+      margin: 0;
+      padding: 0;
+    }
+  
+    .media.media-flip .img {
+      float: right;
+      margin: 0 0 0 10px;
+    }
+  
+    .media > * {
+      margin: 0 0 0 160px;
+    }
+  
+    .media.media-flip > * {
+      margin: 0 160px 0 0;
+    }
+  
+    @supports(display: grid ) {
+      /* override */
+      .media > *,
+      .media.media-flip > * {
+        margin: 0;
+      }
+      .media .img,
+      .media.media-flip .img {
+        margin: 0;
+        width: auto;
+      }
+      .media:after {
+        content: none;
+      }
+  
+      .media {
+        grid-column-gap: 20px;
+        display: grid;
+        grid-template-areas:
+          "img media-title"
+          "img bd"
+          "ft ft";
+        grid-template-columns: 150px 3fr;
+        grid-template-rows: auto 1fr auto;
+      }
+  
+      .media.media-flip {
+        grid-template-areas:
+          "media-title img"
+          "bd img"
+          "ft ft";
+        grid-template-columns: 3fr 150px ;
+      }
+  
+      .media.img-flexie {
+        grid-template-columns: minmax(150px, 1fr) 3fr;
+      }
+  
+      .media.media-flip.img-flexie {
+        grid-template-columns: 3fr minmax(150px, 1fr);
+      }
+  
+      /* nested */
+      .media > .media {
+        grid-column: 2 / -1 ;
+        margin: 0; /* override */
+        margin-top: 1em;
+      }
+    }
+  
+  
+  }
+a {
+    outline        : none;
+    padding        : 2px 1px 0;
+    text-decoration: none;
+}
+a:link {
+    color: #D95468;
+    color: var(--red);
+}
+a:visited { 
+    color: var(--dark);
+}
+a:focus {
+    border-bottom: 1px solid #D95468;
+    border-bottom: 1px solid var(--red);
+    background: #EBBF83;
+    background: var(--yellow);
+}
+a:hover {
+    border-bottom: 1px solid;     
+    background: #EBBF83;     
+    background: var(--yellow);
+  }
+a:active {
+    color: #ecf285;
+    color: var(--highlight);
+  }
+main article {
+    display: flex;
+    margin: 0 3em;
+}
+.post-content article {
+    flex-wrap: wrap;
+}
+.entry-header {
+    flex-grow: 2;
+    padding-right: 2em;
+    min-width: 20vw;
+}
+.title {
+    color: #1D252C;
+    color: var(--very-dark-gray);
+}
+.subtitle {
+    color: #D98E48;
+    color: var(--orange);
+    font-size: 1.5rem;
+}
+.post-date {
+    color: #41505E;
+    color: var(--gray);
+}
+.entry-content {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+.entry-content p:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 140%;
+}
+/* Ripped from https://css-tricks.com/snippets/css/drop-caps/ */
+.entry-content p:first-child:first-letter {
+    float: left;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    color: #D95468;
+    color: var(--red);
+    font-family: Georgia;
+    font-size: 75px;
+    line-height: 60px;
+  }
+/* Inspired by https://codepen.io/wbeeftink/pen/dIaDH */
+.tag {
+    -webkit-transition: color 0.2s;
+    display: inline-block;
+    position: relative;
+    margin: 0 10px 10px 0;
+    border-radius: 3px 0 0 3px;
+    background: #718CA1;
+    background: var(--light-gray);
+    padding: 0 20px 0 23px;
+    height: 26px;
+    color: #999;
+    line-height: 26px;
+    text-decoration: none;
+  }
+.tag::before {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background: #B7C5D3;
     background: var(--bg);
+    width: 6px;
+    height: 6px;
+    content: '';
+  }
+.tag::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 10px solid #718CA1;
+    border-left: 10px solid var(--light-gray);
+    background: #B7C5D3;
+    background: var(--bg);
+    content: '';
+  }
+.tag:hover {
+    background-color: #D95468;
+    background-color: var(--red);
+    color: white;
+  }
+.tag:hover::after {
+     border-left-color: #D95468;
+     border-left-color: var(--red); 
+  }
+.entry-footer {
+      
+      width: 49vw;
+  }
+@media (max-width: 550px) {
+    .content {
+      padding: 2em 0;
+    }
+    main article {
+        flex-direction: column;
+        margin: 0 1em;
+    }
+
+    .entry-footer {
+      width: 100%;
+    }
+}
+.colophon {
+    background: #333F4A;
+    background: var(--dark-gray);
+    min-height: 5em;
+    color: #B7C5D3;
+    color: var(--very-light-gray);
+    font-size: 1.3em;
+    text-align: center;
+}
+.colophon p:first-of-type {
+    padding-top: 1em;
+}
+@media (prefers-color-scheme: dark) {
+    body {
+      background-color:#1D252C;
+      background-color:var(--very-dark-gray);
+      color: #EBBF83;
+      color: var(--yellow);
+    }
+
+    a:visited { 
+      color: #D95468; 
+      color: var(--red);
+  }
+
+    .navbar-item a {
+      color: var(--light);
+  }
+
+  .subtitle {
+    color: #539AFC;
+    color: var(--color2dark);
+}
+
+.post-date {
+  color: #5EC4FF;
+  color: var(--blue);
+}
+
+
+    .tag {
+      background: #41505E;
+      background: var(--gray);
+    }
+
+    .media-content .tag {
+      background: #1D252C;
+      background: var(--very-dark-gray)
+    }
+
+    .tag::before, .tag::after {
+      background: #41505E;
+      background: var(--gray);
+    }
+
+    .tag::after {
+      border-left: 10px solid #1D252C;
+      border-left: 10px solid var(--very-dark-gray);
+    }
+  }
+html {
+    background: #B7C5D3;
+    background: var(--bg);
+    color: #333F4A;
     color: var(--text);
 }
 
+
+/*# sourceMappingURL=main.css.map */
