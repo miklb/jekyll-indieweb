@@ -38,8 +38,6 @@ author_img: https://avatars3.githubusercontent.com/u/3083652
 # Build settings
 markdown: kramdown
 
-sass:
-    style: compressed
 
 plugins:
   - jekyll-paginate
