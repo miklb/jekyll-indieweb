@@ -63,6 +63,7 @@ function css() {
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins))
     .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest("./_site/assets/css/"))
     .pipe(gulp.dest("./assets/css/"))
     .pipe(browsersync.stream());
 }
@@ -76,7 +77,7 @@ function jekyll() {
 
 // Watch files
 function watchFiles() {
-  gulp.watch("./assets/css/**/*", css);
+  gulp.watch("./assets/css/_inc/*", css);
   gulp.series(css, browserSyncReload)
   gulp.watch(
     [
@@ -86,7 +87,7 @@ function watchFiles() {
       "./_posts/**/*"
       
     ],
-    gulp.series(css, jekyll, browserSyncReload)
+    gulp.series(jekyll, css, browserSyncReload)
   );
 }
 
