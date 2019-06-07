@@ -86,7 +86,7 @@ function watchFiles() {
       "./_posts/**/*"
       
     ],
-    gulp.series(jekyll, css, browserSyncReload)
+    gulp.series(css, jekyll, browserSyncReload)
   );
 }
 
