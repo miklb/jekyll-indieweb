@@ -13,8 +13,8 @@ description: A Jekyll quick start to getting up and going with the indieweb.
 # Webmentions - leave blank (remove "yes") if you would not like to receive & display webmentions from other sites
 webmentions:
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+baseurl: "/jekyll-indieweb" # the subpath of your site, e.g. /blog
+url: "http://miklb.github.io/" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 instagram_username: jekyll
