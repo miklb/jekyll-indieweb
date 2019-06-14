@@ -45,9 +45,11 @@ function clean() {
 // SVG 
 function embedSvgs() {
   return gulp
-    .src('*.html')
-    .pipe(embedSvg())
-    .pipe(gulp.dest('.'))
+    .src('_includes/hcard.html')
+    .pipe(embedSvg({
+      root: './assets/images/icons'
+    }))
+    .pipe(gulp.dest('_includes/.'))
 }
 
 
