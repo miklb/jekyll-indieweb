@@ -43,11 +43,11 @@ function clean() {
 }
 
 // SVG 
-function svg() {
+function embedSvgs() {
   return gulp
     .src('*.html')
     .pipe(embedSvg())
-    .pipe(gulp.dest('_site'))
+    .pipe(gulp.dest('.'))
 }
 
 
@@ -96,12 +96,12 @@ function watchFiles() {
       "./_posts/**/*"
       
     ],
-    gulp.series(jekyll, css, browserSyncReload)
+    gulp.series(embedSvgs, jekyll, css, browserSyncReload)
   );
 }
 
 // define complex tasks
-const build = gulp.series(clean, jekyll, css);
+const build = gulp.series(clean, embedSvgs, jekyll, css);
 const watch = gulp.parallel(watchFiles, browserSync);
 
 // export tasks
@@ -109,7 +109,7 @@ const watch = gulp.parallel(watchFiles, browserSync);
 exports.css = css;
 exports.jekyll = jekyll;
 exports.clean = clean;
-exports.svg   = svg;
+exports.embedSvgs   = embedSvgs;
 exports.build = build;
 exports.watch = watch;
 exports.default = build;
