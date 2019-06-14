@@ -10,34 +10,73 @@
 						<p class="subtitle">{{ site.bio }}</p>
 						<ul class="profiles">
 							{% if site.twitter_username %}
-								{% include icon-twitter.html %}
+								<li class="profile">
+									<a href="https://twitter.com/{{ site.twitter_username }}" class="twitter" title="Twitter" rel="me">
+										<svg src="{{site.baseurl}}/assets/images/icons/twitter.svg"></svg>
+									</a>
+								</li>
 							{% endif %}
 							{% if site.github_username %}
-								{% include icon-github.html %}
+								<li class="profile">
+									<a href="https://github.com/{{ site.github_username }}" class="github" title="GitHub" rel="me">
+									<svg src="{{site.baseurl}}/assets/images/icons/github.svg"></svg>
+									</a>
+								</li>
 							{% endif %}
 							{% if site.instagram_username %}
-								{% include icon-instagram.html %}
+								<li class="profile">
+									<a href="https://instagram.com/{{ site.instagram_username }} " class="instagram" title="Instagram" rel="me">
+									<svg src="{{site.baseurl}}/assets/images/icons/instagram.svg"></svg>
+									</a>
+								</li>
 							{% endif %}
 							{% if site.facebook_url %}
-								{% include icon-facebook.html %}
+								<li class="profile">
+									<a href="{{ site.facebook_url }}" class="facebook" title="Facebook" rel="me">
+									<svg src="{{site.baseurl}}/assets/images/icons/facebook.svg"></svg>
+									</a>
+								</li>
 							{% endif %}
 							{% if site.linkedin_url %}
-								{% include icon-linkedin.html %}
+								<li class="profile">
+									<a href="{{ site.linkedin_url }}" class="linkedin" title="LinkedIn" rel="me">
+									<svg src="{{site.baseurl}}/assets/images/icons/linkedin.svg"></svg>
+									</a>
+								</li>
 							{% endif %}
 							{% if site.tumblr_url %}
-								{% include icon-tumblr.html %}
+								<li class="profile">
+									<a href="{{ site.tumblr_url }}" class="tumblr" title="Tumblr" rel="me">
+									<svg src="{{site.baseurl}}/assets/images/icons/tumblr.svg"></svg>
+									</a>
+								</li>
 							{% endif %}
 							{% if site.flickr_username %}
-								{% include icon-flickr.html %}
+								<li class="profile">
+									<a href="https://www.flickr.com/photos/{{ site.flickr_username }}" class="flickr" title="Flickr" rel="me">
+									<svg src="{{site.baseurl}}/assets/images/icons/flickr.svg"></svg>
+									</a>
+								</li>
 							{% endif %}
 							{% if site.foursquare_username %}
-								{% include icon-foursquare.html %}
+								<li class="profile">
+									<a href="https://foursquare.com/{{site.foursquare_username }}" class="foursquare" title="Foursquare" rel="me">
+									<svg src="{{site.baseurl}}/assets/images/icons/foursquare.svg"></svg>
+									</a>
+								</li>
 							{% endif %}
 							{% if site.email %}
-								{% include icon-email.html %}
+								<li class="profile">
+									<a href="mailto:{{ site.email }}" class="email u-email" title="Email">
+									<svg src="{{site.baseurl}}/assets/images/icons/mail.svg"></svg>
+									</a>
+								</li>
 							{% endif %}
-							<li class="profile"><a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" class="rss" title="RSS"><svg class="icon is-large" viewBox="0 0 512 512"><path d="M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z"/></svg></a></li>
-
+							<li class="profile">
+								<a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" class="rss" title="RSS">
+								<svg src="{{site.baseurl}}/assets/images/icons/rss.svg"></svg>
+								</a>
+							</li>
 						</ul>
 					</div>
 				</div>
