@@ -8,6 +8,7 @@ const cssnano = require("cssnano");
 const gulp = require("gulp");
 const sourcemaps = require("gulp-sourcemaps");
 const del = require("del");
+const embedSvg = require('gulp-embed-svg');
 const plumber = require("gulp-plumber");
 const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
@@ -39,6 +40,14 @@ function browserSyncReload(done) {
 // Clean assets
 function clean() {
   return del(["./_site/assets/"]);
+}
+
+// SVG 
+function svg() {
+  return gulp
+    .src('*.html')
+    .pipe(embedSvg())
+    .pipe(gulp.dest('_site'))
 }
 
 
@@ -100,6 +109,7 @@ const watch = gulp.parallel(watchFiles, browserSync);
 exports.css = css;
 exports.jekyll = jekyll;
 exports.clean = clean;
+exports.svg   = svg;
 exports.build = build;
 exports.watch = watch;
 exports.default = build;
