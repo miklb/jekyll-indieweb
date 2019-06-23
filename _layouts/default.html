@@ -36,7 +36,7 @@
 							{% if page.url == item.url %}
 							<li class="navbar-item" disabled="true"><a class="is-current" href="{{ item.url }}">{{ item.title }}</a></li>
 							{% else %}
-							<li class="navbar-item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+							<li class="navbar-item"><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
 							{% endif %}
 						{% endfor %}
 					</ul>
