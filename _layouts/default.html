@@ -11,23 +11,7 @@
 		{% endif %}
 	>
 		<div class="wrapper">
-			<header class="mainheader">
-				<div class="site-branding">
-					<h1>{{ site.title }}</h1>
-            		<p class="subtitle">{{ site.description }}</p>
-				</div>	
-				<nav class="mainnav">
-					<ul>
-						{% for item in site.data.navbar.main-nav %}
-							{% if page.url == item.url %}
-							<li class="navbar-item" disabled="true"><a class="is-current" href="{{ item.url }}">{{ item.title }}</a></li>
-							{% else %}
-							<li class="navbar-item"><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
-							{% endif %}
-						{% endfor %}
-					</ul>
-            	</nav>
-			</header>
+			{% include header.html %}
 			{% if page.url == '/' %}
 			{% include hcard.html %}
 			{% endif %}
