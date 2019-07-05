@@ -3,43 +3,47 @@
 */
 
 .mainheader {
-    display: grid;
-	grid-template-columns: 2fr 2fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--very-dark-gray);
+    color: #fff;
+}
+
+.mainheader h1 {
+    font-size: 1.3rem;
 }
 
 .site-branding {
-    justify-self: start;
-    margin: 2rem;
+    display: flex;
+    justify-content: space-around;
 }
+
+.site-branding img {
+    height: 3em;
+    width: 3em;
+    margin-right: 1em;
+}
+
 
 .mainnav {
-    margin-top: 2rem;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.mainnav ul {
-    display: inline;
-/*     align-items: baseline; */
-	list-style-type: none;
+.mainnav a {
+    padding: .5em;
 }
 
-.navbar-item {
-    margin-right: 1.5rem;
-    font-size: 1.6rem;
-	font-family: serif;
-}
+@media (min-width: 900px) {
+    .mainheader {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 
-.navbar-item a {
-    color: var(--dark);
-}
-
-@media (min-width: 550px) {
-    .mainnav ul {
-		display: flex;
-	/*     align-items: baseline; */
-		list-style-type: none;
-		flex-flow: row wrap;
-  /* This aligns items to the end line on main-axis */
-		  justify-content: flex-end;
-		  margin: 0;
-	}
+    .mainnav a {
+        padding: .5em .8em;
+    }
 }
