@@ -1,0 +1,17 @@
+<header class="mainheader">
+				<div class="site-branding">
+					<a class="logo" href="{{site.baseurl}}/">
+            			<img src="{{site.baseurl}}/assets/images/favicon.png" alt="{{ site.title }}">
+        			</a>
+					<h1>{{ site.title }}</h1>
+				</div>	
+				<nav class="mainnav" role="navigation">					
+						{% for item in site.data.navbar.main-nav %}
+							{% if page.url == item.url %}
+							<a class="is-current" href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+							{% else %}
+							<a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+							{% endif %}
+						{% endfor %}
+            	</nav>
+			</header>
