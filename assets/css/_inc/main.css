@@ -1,6 +1,7 @@
 @import "variables";
 @import "remedy";
 @import "grid.css";
+@import "typography.css";
 @import "header.css";
 @import "hcard.css";
 @import "links.css";

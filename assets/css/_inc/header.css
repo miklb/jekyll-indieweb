@@ -10,10 +10,6 @@
     color: #fff;
 }
 
-.mainheader h1 {
-    font-size: 1.3rem;
-}
-
 .site-branding {
     display: flex;
     justify-content: space-around;
