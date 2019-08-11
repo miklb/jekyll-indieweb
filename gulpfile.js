@@ -8,7 +8,6 @@ const cssnano = require("cssnano");
 const gulp = require("gulp");
 const sourcemaps = require("gulp-sourcemaps");
 const del = require("del");
-const embedSvg = require('gulp-embed-svg');
 const plumber = require("gulp-plumber");
 const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
@@ -42,17 +41,6 @@ function clean() {
   return del(["./_site/assets/"]);
 }
 
-// SVG 
-function embedSvgs() {
-  return gulp
-    .src('_includes/icons_base.html')
-    .pipe(embedSvg({
-      root: './assets/images/icons'
-    }))
-    .pipe(rename('icons.html'))
-    .pipe(gulp.dest('_includes/.'))
-}
-
 
 
 // CSS task
@@ -82,7 +70,7 @@ function css() {
 
 // Jekyll
 function jekyll() {
-  return cp.spawn("bundle", ["exec", "jekyll", "build", "--config", "_config.yml,_config_dev.yml"], {
+  return cp.spawn("bundle", ["exec", "jekyll", "build"], {
     stdio: "inherit"
   });
 }
@@ -99,12 +87,12 @@ function watchFiles() {
       "./_posts/**/*"
       
     ],
-    gulp.series(embedSvgs, jekyll, css, browserSyncReload)
+    gulp.series(jekyll, css, browserSyncReload)
   );
 }
 
 // define complex tasks
-const build = gulp.series(clean, embedSvgs, jekyll, css);
+const build = gulp.series(clean, jekyll, css);
 const watch = gulp.parallel(watchFiles, browserSync);
 
 // export tasks
@@ -112,7 +100,6 @@ const watch = gulp.parallel(watchFiles, browserSync);
 exports.css = css;
 exports.jekyll = jekyll;
 exports.clean = clean;
-exports.embedSvgs   = embedSvgs;
 exports.build = build;
 exports.watch = watch;
 exports.default = build;

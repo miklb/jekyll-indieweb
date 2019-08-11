@@ -23,6 +23,7 @@
     "del": "^4.1.1",
     "gulp": "^4.0.1",
     "gulp-embed-svg": "^1.1.4",
+    "gulp-load-plugins": "^2.0.1",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
