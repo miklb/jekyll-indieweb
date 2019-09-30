@@ -12,7 +12,7 @@
 		{% elsif post.mf-repost-of %}
 			<a class="u-repost-of" href="{{post.mf-repost-of | first}}">{{post.title}}</a>
 		{% else %}
-		<a class="u-url" href="{{ site.baseurl }}{{ post.url }}">
+		<a class="u-url" href="{{ post.url }}">
 			{{ post.title }}
 		</a>
 		{% endif %}
@@ -20,7 +20,7 @@
 {% endif %}
 
 			{% if post.title == '' %}
-			<a class="u-url" href="{{ site.baseurl }}{{ post.url }}"><time datetime="{{ post.date | date_to_xmlschema }}" class="dt-time post-date">{{ post.date | date_to_string }}</time></a>
+			<a class="u-url" href="{{ post.url }}"><time datetime="{{ post.date | date_to_xmlschema }}" class="dt-time post-date">{{ post.date | date_to_string }}</time></a>
 			{% else %}
 			<time datetime="{{ post.date | date_to_xmlschema }}" class="dt-time post-date">{{ post.date | date_to_string }}</time>
 			{% endif %}
