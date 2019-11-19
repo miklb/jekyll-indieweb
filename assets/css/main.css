@@ -449,6 +449,13 @@ a:hover {
     background: #EBBF83;     
     background: var(--yellow);
   }
+.profiles a:hover {
+    border: none;
+    background: none;
+}
+.tags a:hover {
+    border: none;
+}
 a:active {
     color: #ecf285;
     color: var(--highlight);
