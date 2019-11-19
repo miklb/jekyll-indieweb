@@ -280,8 +280,7 @@ img {
       
 }
 .usercard:hover .usercard-img {
-    -webkit-transform: scale(1.1) rotate(3deg);
-            transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
 }
 @media (max-width: 550px) {
     .usercard {
@@ -299,11 +298,10 @@ img {
 }
 @media (min-width: 550px) {
     .usercard .usercard-avatar:after {
-        -webkit-transform: skewx(-10deg);
         position: absolute;
         top: 0;
         right: -16%;
-                transform: skewx(-10deg);
+        transform: skewx(-10deg);
         background: #333F4A;
         background: var(--dark-gray);
         width: 20%;
@@ -617,13 +615,13 @@ main article {
     }
 
     .tag::before, .tag::after {
-      background: #41505E;
-      background: var(--gray);
+      background: #1D252C;
+      background: var(--very-dark-gray);
     }
 
     .tag::after {
-      border-left: 10px solid #1D252C;
-      border-left: 10px solid var(--very-dark-gray);
+      border-left: 10px solid #41505E;
+      border-left: 10px solid var(--gray);
     }
   }
 html {

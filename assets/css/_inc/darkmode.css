@@ -30,10 +30,10 @@
     }
 
     .tag::before, .tag::after {
-      background: var(--gray);
+      background: var(--very-dark-gray);
     }
 
     .tag::after {
-      border-left: 10px solid var(--very-dark-gray);
+      border-left: 10px solid var(--gray);
     }
   }
