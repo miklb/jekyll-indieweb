@@ -6,11 +6,11 @@ a {
 
 
 a:link {
-    color: var(--red);
+    color: var(--color3light);
 }
 
 a:visited { 
-    color: var(--dark);
+    color: var(--red);
 }
 
 a:focus {
@@ -26,6 +26,10 @@ a:hover {
 .profiles a:hover {
     border: none;
     background: none;
+}
+
+.tags a, .tags a:visited {
+    color: var(--very-light-gray)
 }
 
 .tags a:hover {

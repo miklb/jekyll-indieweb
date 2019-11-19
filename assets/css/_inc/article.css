@@ -29,7 +29,7 @@ main article {
 
 .entry-content {
     margin-top: 0;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 .entry-content p:first-of-type {
@@ -55,6 +55,7 @@ main article {
     color: #999;
     display: inline-block;
     height: 26px;
+    font-size: 18px;
     line-height: 26px;
     padding: 0 20px 0 23px;
     position: relative;
