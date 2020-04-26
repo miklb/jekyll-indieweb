@@ -578,6 +578,27 @@ main article {
       width: 100%;
     }
 }
+/* Pagination */
+.content nav {
+  display: flex;
+  justify-content: center;
+}
+.pagination {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pagination li {
+  margin: 0 1px;
+}
+.pagination a {
+  display: block;
+  border: 1px solid #999;
+  border-radius: .2em;
+  padding: .5em 1em;
+  text-decoration: none;
+  }
 .colophon {
     background: #333F4A;
     background: var(--dark-gray);
@@ -643,6 +664,17 @@ html {
     background: var(--bg);
     color: #333F4A;
     color: var(--text);
+}
+.visuallyhidden {
+    clip: rect(0 0 0 0);
+    position: absolute;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    width: 1px;
+    height: auto;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 
