@@ -1,6 +1,6 @@
 {
   "name": "jekyll-indieweb",
-  "version": "2.0.0a",
+  "version": "2.0.0b",
   "description": "A Jekyll theme for the IndieWeb.",
   "main": "index.js",
   "scripts": {
@@ -22,20 +22,13 @@
     "cssnano": "^4.1.10",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
-    "gulp-embed-svg": "^1.1.5",
-    "gulp-load-plugins": "^2.0.1",
+    "gulp-load-plugins": "^2.0.3",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sourcemaps": "^2.6.5",
-    "postcss-cli": "^6.1.3",
-    "postcss-custom-media": "^7.0.8",
-    "postcss-custom-selectors": "^5.1.2",
     "postcss-easy-import": "^3.0.0",
-    "postcss-logical": "^3.0.0",
-    "postcss-media-minmax": "^4.0.0",
     "postcss-preset-env": "^6.7.0",
-    "postcss-utilities": "^0.8.4",
     "uslug": "^1.0.4"
   }
 }
