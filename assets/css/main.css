@@ -590,6 +590,54 @@ main article {
 .colophon p:first-of-type {
     padding-top: 1em;
 }
+@media (color-index: 48) {
+    body {
+      background-color:#1D252C;
+      background-color:var(--very-dark-gray);
+      color: #EBBF83;
+      color: var(--yellow);
+    }
+
+    a:visited { 
+      color: #D95468; 
+      color: var(--red);
+  }
+
+    .navbar-item a {
+      color: var(--light);
+  }
+
+  .subtitle {
+    color: #539AFC;
+    color: var(--color2dark);
+}
+
+.post-date {
+  color: #5EC4FF;
+  color: var(--blue);
+}
+
+
+    .tag {
+      background: #41505E;
+      background: var(--gray);
+    }
+
+    .media-content .tag {
+      background: #1D252C;
+      background: var(--very-dark-gray)
+    }
+
+    .tag::before, .tag::after {
+      background: #1D252C;
+      background: var(--very-dark-gray);
+    }
+
+    .tag::after {
+      border-left: 10px solid #41505E;
+      border-left: 10px solid var(--gray);
+    }
+  }
 @media (prefers-color-scheme: dark) {
     body {
       background-color:#1D252C;
