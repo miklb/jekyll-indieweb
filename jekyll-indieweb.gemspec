@@ -12,15 +12,14 @@ Gem::Specification.new do |s|
 
   s.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README)!i) }
 
-  s.add_runtime_dependency 'jekyll'
-  s.add_runtime_dependency "jekyll-paginate-v2"
-  s.add_runtime_dependency "jekyll-sitemap"
-  s.add_runtime_dependency "jekyll-seo-tag"
-  s.add_runtime_dependency "jekyll-gist"
-  s.add_runtime_dependency "jekyll-feed"
-  s.add_runtime_dependency "jekyll-data"
-  s.add_runtime_dependency "jekyll-include-cache"
-
+  s.add_runtime_dependency 'jekyll', '~> 4.0.1'
+  s.add_runtime_dependency "jekyll-paginate-v2", '~> 3.0.0'
+  s.add_runtime_dependency "jekyll-sitemap", '~> 1.4.0'
+  s.add_runtime_dependency "jekyll-seo-tag", '~> 2.6.1'
+  s.add_runtime_dependency "jekyll-gist", '~> 1.5.0'
+  s.add_runtime_dependency "jekyll-feed", '~> 0.13.0'
+  s.add_runtime_dependency "jekyll-data", '~> 1.1.0'
+  s.add_runtime_dependency "jekyll-include-cache", '~> 0.2.0'
   s.add_development_dependency "bundler"
   s.add_development_dependency "rake"
 end
