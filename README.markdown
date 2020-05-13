@@ -72,9 +72,13 @@ When submitting a new Pull Request with CSS changes, make sure to edit a file in
 
 ## History
 
-0.1 Initial release
-0.2 Initial Support for Micropub posts
+2.0.0 beta initial release as a theme gem.
 0.2.1 minor changes in preparation for [2.0 milestone](https://github.com/miklb/jekyll-indieweb/milestone/1)
+0.2 Initial Support for Micropub posts
+0.1 Initial release
+
+
+
 
 ## Credits
 
