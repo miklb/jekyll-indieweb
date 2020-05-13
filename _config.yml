@@ -40,19 +40,11 @@ markdown: kramdown
 
 
 plugins:
-  - jekyll-paginate-v2
+  - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-gist
   - jekyll-sitemap
   - jekyll-feed
 
-# Pagination Settings
-pagination:
-  enabled: true
-  per_page: 3
-  offset: 2
-  permalink: '/page/:num/'
-  title: ':title - page :num of :max'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
+
+paginate: 5
