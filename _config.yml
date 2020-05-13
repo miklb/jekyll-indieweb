@@ -40,8 +40,11 @@ markdown: kramdown
 
 
 plugins:
-  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-seo-tag
   - jekyll-gist
+  - jekyll-sitemap
+  - jekyll-feed
+
 
 paginate: 5
