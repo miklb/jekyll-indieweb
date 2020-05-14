@@ -1,2 +1,5 @@
 - name: Lighthouse CI Action
   uses: treosh/lighthouse-ci-action@v2
+
+- name: Publish to Rubygems
+  uses: cadwallion/publish-rubygems-action@v1.0.0

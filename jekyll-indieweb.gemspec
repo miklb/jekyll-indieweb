@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name          = "jekyll-indieweb"
-  s.version       = "2.0.0-alpha"
+  s.version       = "2.0.0-beta"
   s.authors       = ["Michael Bishop"]
   s.email         = ["miklb@miklb.com"]
 
