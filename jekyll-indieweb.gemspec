@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name          = "jekyll-indieweb"
-  s.version       = "2.0.0-beta"
+  s.version       = "2.0.0-beta.2"
   s.authors       = ["Michael Bishop"]
   s.email         = ["miklb@miklb.com"]
 
@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "jekyll-seo-tag", '~> 2.6.1'
   s.add_runtime_dependency "jekyll-gist", '~> 1.5.0'
   s.add_runtime_dependency "jekyll-feed", '~> 0.13.0'
-  s.add_runtime_dependency "jekyll-data", '~> 1.1.0'
   s.add_runtime_dependency "jekyll-include-cache", '~> 0.2.0'
   s.add_development_dependency "bundler"
   s.add_development_dependency "rake"

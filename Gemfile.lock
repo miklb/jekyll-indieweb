@@ -1,9 +1,8 @@
 PATH
   remote: .
   specs:
-    jekyll-indieweb (2.0.0.pre.alpha)
+    jekyll-indieweb (2.0.0.pre.beta)
       jekyll (~> 4.0.1)
-      jekyll-data (~> 1.1.0)
       jekyll-feed (~> 0.13.0)
       jekyll-gist (~> 1.5.0)
       jekyll-include-cache (~> 0.2.0)
@@ -44,8 +43,6 @@ GEM
       rouge (~> 3.0)
       safe_yaml (~> 1.0)
       terminal-table (~> 1.8)
-    jekyll-data (1.1.0)
-      jekyll (>= 3.3, < 5.0.0)
     jekyll-feed (0.13.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-gist (1.5.0)
