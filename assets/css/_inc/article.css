@@ -30,6 +30,7 @@ main article {
 .entry-content {
     margin-top: 0;
     font-size: 1.4em;
+    min-width: 85vw;
 }
 
 .entry-content p:first-of-type {
