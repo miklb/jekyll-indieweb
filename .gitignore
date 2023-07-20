@@ -5,3 +5,6 @@ _site
 Gemfile.lock
 .gtm/*
 node_modules
+
+.DS_Store
+
